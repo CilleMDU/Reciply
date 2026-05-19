@@ -26,6 +26,7 @@
 
   /* Border radius */
   --border-radius: 0.5rem;
+
   /* Mascots */
   --ziggy-img: url("./assets/ziggy.svg");
   --buzzy-img: url("./assets/buzzy.svg");
@@ -33,23 +34,38 @@
   --crispy-img: url("./assets/crispy.svg");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--background-color);
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: var(--font-text);
   color: var(--text-color);
-  width: 390px;
-  margin: 0 auto;
-  max-width: 390px;
-  padding: 1.6rem;
 }
 
-/* rem 10px=1rem */
-html {
-  font-size: 62.5%;
+.errorCode {
+  font-size: var(--titles-size);
+  font-weight: var(--font-weight-bold);
+  margin: 2rem;
+}
+
+.errorMessage {
+  font-size: var(--tekst-size);
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.errorButton {
+  display: flex;
+  gap: 0.8rem;
+  border-radius: var(--border-radius);
+  background-color: var(--ziggy);
+  color: var(--background-color);
+  padding: 1.6rem;
+  border: none;
+  font-size: var(--titles-size);
+  margin: 5rem;
+}
+
+.errorButton:hover {
+  cursor: pointer;
 }
