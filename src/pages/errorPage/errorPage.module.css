@@ -2,7 +2,7 @@
   /* Colors */
   --background-color: #f2f0e7;
   --primary-color: #e5dac6;
-  --primary-color-op: #e5dac6 70%;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
   --text-input-color: #c2b8a7;
   --text-color: #2c2c2c;
   --ziggy: #9abc04;
