@@ -26,30 +26,9 @@
 
   /* Border radius */
   --border-radius: 0.5rem;
-  /* Mascots */
+  /* Mascots */ 
   --ziggy-img: url("./assets/ziggy.svg");
   --buzzy-img: url("./assets/buzzy.svg");
   --cherry-img: url("./assets/cherry.svg");
   --crispy-img: url("./assets/crispy.svg");
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--background-color);
-  font-family: var(--font-text);
-  color: var(--text-color);
-  width: 390px;
-  margin: 0 auto;
-  max-width: 390px;
-  padding: 1.6rem;
-}
-
-/* rem 10px=1rem */
-html {
-  font-size: 62.5%;
 }
