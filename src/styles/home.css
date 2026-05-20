@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #F2F0E7;
+}
+
+.home {
+  min-height: 100vh;
+  background: #F2F0E7;
+  padding-bottom: 120px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+
+.logo {
+  font-size: 42px;
+  font-family: cursive;
+}
+
+.plus-btn {
+  border: none;
+  background: transparent;
+  color: #9ABC04;
+}
+
+.chef-icon {
+  font-size: 40px;
+}
+
+.stories {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 10px 24px 30px;
+}
+
+.story img {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feed-card {
+  padding: 0 24px;
+  }
+
+.feed-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.food-image {
+  width: 100%;
+  border-radius: 8px;
+  height: 620px;
+  object-fit: cover;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #88847A;
+}
+
+.dots .active {
+  background: #2C2C2C;
+}
+
+.feed-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.feed-text {
+  margin-top: 14px;
+}
+
+.feed-text span {
+  color: #2C2C2C;
+  font-size: 14px;
+}
+
+.tip-bubble {
+  position: fixed;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #F2F0E7;
+  border: 2px solid #2C2C2C;
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  width: 380px;
+}
+.tip-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 40px;
+  width: 24px;
+  height: 24px;
+  background: #F2F0E7;
+  border-left: 2px solid #2C2C2C;
+  border-bottom: 2px solid #2C2C2C;
+  transform: rotate(-45deg);
+}
+
+.bubble-icon {
+  font-size: 40px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #F2F0E7;
+  display: flex;
+  justify-content: space-around;
+  padding: 18px 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: #9ABC04;
+}
