@@ -1,0 +1,35 @@
+:root {
+  /* Colors */
+  --background-color: #f2f0e7;
+  --primary-color: #e5dac6;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
+  --text-input-color: #c2b8a7;
+  --text-color: #2c2c2c;
+  --ziggy: #9abc04;
+  --buzzy: #5273ba;
+  --cherry: #b32e40;
+  --crispy: #ffa54b;
+
+  /* Font */
+  --font-rubrik: "betania patmos", serif;
+  --font-text: "istok web", sans-serif;
+
+  /* Font size */
+  --tekst-size: 1.6rem;
+  --input-size: 1.2rem;
+  --titles-size: 2rem;
+  --optional-size: 0.8rem;
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius: 0.5rem;
+  /* Mascots */
+  --ziggy-img: url("./assets/ziggy.svg");
+  --buzzy-img: url("./assets/buzzy.svg");
+  --cherry-img: url("./assets/cherry.svg");
+  --crispy-img: url("./assets/crispy.svg");
+}
+

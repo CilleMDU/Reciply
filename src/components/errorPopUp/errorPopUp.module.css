@@ -1,0 +1,110 @@
+:root {
+  /* Colors */
+  --background-color: #f2f0e7;
+  --primary-color: #e5dac6;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
+  --text-input-color: #c2b8a7;
+  --text-color: #2c2c2c;
+  --ziggy: #9abc04;
+  --buzzy: #5273ba;
+  --cherry: #b32e40;
+  --crispy: #ffa54b;
+
+  /* Font */
+  --font-rubrik: "betania patmos", serif;
+  --font-text: "istok web", sans-serif;
+
+  /* Font size */
+  --tekst-size: 1.6rem;
+  --input-size: 1.2rem;
+  --titles-size: 2rem;
+  --optional-size: 0.8rem;
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius: 0.5rem;
+  /* Mascots */
+  --ziggy-img: url("./assets/ziggy.svg");
+  --buzzy-img: url("./assets/buzzy.svg");
+  --cherry-img: url("./assets/cherry.svg");
+  --crispy-img: url("./assets/crispy.svg");
+}
+
+.errorContent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.errorModal {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: var(--text-color) 1px solid;
+  max-width: 350px;
+  width: 90%;
+}
+
+.errorTop {
+  color: var(--text-color);
+  font-family: var(--font-text);
+  font-size: var(--titles-size);
+  font-weight: var(--font-weight-regular);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.errorButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.retry {
+  background-color: #c2dcff;
+  width: 20.5rem;
+  padding: 8px 56px;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  font-family: var(--font-text);
+  font-size: var(--titles-size);
+  font-weight: var(--font-weight-regular);
+  border: var(--text-color) 1px solid;
+  border-radius: var(--border-radius);
+  margin-top: 1rem;
+}
+
+.undo {
+  background-color: #f99ca8;
+  width: 20.5rem;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  font-family: var(--font-text);
+  font-size: var(--titles-size);
+  font-weight: var(--font-weight-regular);
+  border: var(--text-color) 1px solid;
+  border-radius: var(--border-radius);
+}
+
+.undo:hover,
+.retry:hover {
+  cursor: pointer;
+}
