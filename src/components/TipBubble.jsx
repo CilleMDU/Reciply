@@ -1,19 +1,48 @@
-export default function TipBubble() {
+import { useEffect, useRef } from "react";
+
+export default function TipBubble({
+  setShowBubble,
+}) {
+  const bubbleRef = useRef();
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        bubbleRef.current &&
+        !bubbleRef.current.contains(
+          event.target
+        )
+      ) {
+        setShowBubble(false);
+      }
+    }
+
+    document.addEventListener(
+      "mousedown",
+      handleClickOutside
+    );
+
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+    };
+  }, []);
+
   return (
-    <div className="tip-bubble">
-      <div className="bubble-icon"><img src="/icons/DIT_LOGO.png" alt="logo" className="logo-icon" /></div>
-
-      <div>
-        <h3>Lækre tips og tricks</h3>
-
-        <p>
-          Så kan vi se hvad
-          <br />
-          man kan erstatte
-          <br />
-          sukker med
-        </p>
-      </div>
-    </div>
-  )
+    <div
+      ref={bubbleRef}
+      className="tip-bubble"
+    >
+      <h3>Lækre tips og tricks</h3>
+        <div className="tipBrod">
+            <p>
+            Så kan vi se hvad man kan
+            erstatte sukker med
+            </p>
+            <img className="ziggyTip" src="src/assets/mascots/ziggy.svg" alt="ziggy" />
+        </div>
+        </div>
+  );
 }

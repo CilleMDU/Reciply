@@ -1,23 +1,33 @@
-export default function FeedCard() {
+export default function FeedCard({ profilPic, foodPics, profilNavn, }) {
+
+console.log(foodPics)
+
+
   return (
     <div className="feed-card">
       <div className="feed-header">
-        <img
-          src='https://images.unsplash.com/photo-1694399120199-72ac9241c2f4?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-
-
+               <img
+          src = { profilPic }
+          
           alt="profile"
           className="profile-pic"
-        />
+        /> 
 
-        <p>lucia_jensen</p>
+              <p>{profilNavn}</p>
       </div>
 
-      <img
-        src="https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="food"
-        className="food-image"
-      />
+       <div className="horizontal-slider">
+  {foodPics.map((img, index) => (
+    <img
+      key={index}
+      src={img}
+      alt="food"
+      className="food-image horizontal"
+    />
+  ))}
+</div>
+
+
 
       <div className="dots">
         <span className="active"></span>
@@ -34,6 +44,9 @@ export default function FeedCard() {
           <div className="icon-box">
             <img src="public/ikoner/comment.svg" alt="comment" />
           </div>
+            <div>
+               <img src="public/ikoner/reshare.svg" alt="reshare"/>       
+            </div>
         </div>
 
         <img src="public/ikoner/gemOpskriftInactive.svg" alt="bookmark" />
@@ -46,6 +59,8 @@ export default function FeedCard() {
 
         <span>For 2 min siden</span>
       </div>
-    </div>
+      </div>
+      
+      
   )
 }

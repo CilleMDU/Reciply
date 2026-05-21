@@ -5,10 +5,12 @@ export default function Header() {
         <img src="public/ikoner/plus.svg" alt="plus" />
       </button>
 
-      <h1 className="logo">Reciply</h1>
+      <div className="logo">
+        <img src="public/ikoner/logo.svg" alt="logo"/>
+      </div>
 
-      <div className="chef-ikon">
-        <img src="src/assets/mascots/ziggy.svg" alt="logo" className="logo-ikon" />
+      <div className="ziggy-ikon">
+        <img src="src/assets/mascots/ziggy.svg" alt="logo" className="maskot-ikon" />
       </div>
     </header>
   )
