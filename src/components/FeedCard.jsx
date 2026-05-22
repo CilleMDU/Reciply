@@ -1,6 +1,7 @@
 export default function FeedCard({ profilPic, foodPics, profilNavn, }) {
 
-console.log(foodPics)
+    console.log(foodPics)
+    
 
 
   return (
