@@ -1,4 +1,4 @@
-export default function FeedCard({ profilPic, foodPics, profilNavn, }) {
+export default function FeedCard({ profilPic, foodPics, profilNavn, profilComment, tid, }) {
 
 
     let needDots = false;
@@ -70,10 +70,14 @@ export default function FeedCard({ profilPic, foodPics, profilNavn, }) {
 
       <div className="feed-text">
         <p>
-          Synes godt om <strong>lilje.pedersen</strong>
+          Synes godt om claireholt og andre
         </p>
+        <div className="commentar">
+            <p>{profilNavn} </p> 
+            <p>{profilComment}</p>
+        </div>
 
-        <span>For 2 min siden</span>
+        <p className="tidspunkt" >{tid}</p>
       </div>
       </div>
       

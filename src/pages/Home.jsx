@@ -18,7 +18,11 @@ export default function Home() {
       ,
     profilPic: "https://images.unsplash.com/photo-1694399120199-72ac9241c2f4?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ,
-    profilNavn: "lucia_jensen" 
+      profilNavn: "lucia_jensen"
+      ,
+      profilComment: "Super lækker aftensmad jeg lavede den anden dag"
+      ,
+      tid: "For 2 min siden"
     },
 
     {
@@ -27,6 +31,10 @@ export default function Home() {
       profilPic:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ,
       profilNavn: "claireholt"
+      ,
+      profilComment: "Hvis du leder efter en lækker taco opskrift så er..."
+      ,
+      tid: "For 30 min siden"
     },
 
     {
@@ -35,6 +43,10 @@ export default function Home() {
       profilPic: "https://images.unsplash.com/photo-1593757107729-eae8bcc74f8e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ,
       profilNavn: "mathias.bennick"
+      ,
+      profilComment: "OMG en god pastaret jeg spise igår"
+      ,
+      tid: "For 1 time siden"
     },
 
     {
@@ -43,6 +55,10 @@ export default function Home() {
       profilPic: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ,
       profilNavn: "nielsenmathilde"
+      ,
+      profilComment: "Jeg er så stolt over de pandekager jeg fik lavet"
+      ,
+      tid: "For 3 timer siden"
     },
 
     {
@@ -51,6 +67,10 @@ export default function Home() {
       profilPic: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ,
       profilNavn: "larsjensen"
+      ,
+      profilComment: "Jeg elsker PIZZA"
+      ,
+      tid: "For 1 dag siden"
     }
   ]
 
@@ -82,6 +102,8 @@ export default function Home() {
             profilPic={post.profilPic}
             foodPics={post.foodPics}
             profilNavn={post.profilNavn}
+            profilComment={post.profilComment}
+            tid={post.tid}
             key={index}
           />
       )
