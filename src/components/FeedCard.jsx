@@ -1,6 +1,16 @@
 export default function FeedCard({ profilPic, foodPics, profilNavn, }) {
 
-    console.log(foodPics)
+
+    let needDots = false;
+
+    if (foodPics.length > 1)
+    {
+
+        needDots = true;
+    }
+    else {
+        needDots = false;
+    }
     
 
 
@@ -27,13 +37,18 @@ export default function FeedCard({ profilPic, foodPics, profilNavn, }) {
     />
   ))}
 </div>
+          
+<div
+  className={`dots ${
+    needDots ? "visible" : "hidden"
+  }`}
+>
+  <span className="active"></span>
+  <span></span>
+</div>
 
 
 
-      <div className="dots">
-        <span className="active"></span>
-        <span></span>
-      </div>
 
       <div className="feed-actions">
         <div className="left-actions">

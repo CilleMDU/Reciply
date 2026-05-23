@@ -93,6 +93,13 @@ body {
 .dots .active {
   background: #2C2C2C;
 }
+ .visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
 
 .feed-actions {
   display: flex;
