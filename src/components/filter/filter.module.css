@@ -15,7 +15,7 @@
   --font-text: "istok web", sans-serif;
 
   /* Font size */
-  --tekst-size: 1.6rem;
+  --text-size: 1.6rem;
   --input-size: 1.2rem;
   --titles-size: 2rem;
   --optional-size: 0.8rem;
@@ -33,3 +33,137 @@
   --crispy-img: url("./assets/crispy.svg");
 }
 
+.filter {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.filterList,
+.categoryList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.categoryList input[type="radio"] {
+  display: none;
+}
+
+.filterList input[type="checkbox"] {
+  display: none;
+}
+
+.filterName,
+.categoryName {
+  cursor: pointer;
+  width: 13.8rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+}
+
+.filterList input[type="checkbox"]:checked + .filterName {
+  background-color: var(--ziggy);
+  color: var(--background-color);
+}
+
+.categoryList input[type="radio"]:checked + .categoryName {
+  background-color: var(--ziggy);
+  color: var(--background-color);
+}
+
+.categoryWithFilters {
+  background-color: var(--ziggy);
+  color: var(--background-color);
+}
+
+.categoryName::after {
+  content: attr(data-count);
+  background-color: var(--ziggy);
+  color: var(--background-color);
+}
+
+.categoryTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
+  font-family: var(--font-text);
+  font-size: var(--titles-size);
+  color: var(--text-color);
+  font-weight: var(--font-weight-bold);
+}
+
+.filterTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  gap: 2rem;
+  font-family: var(--font-text);
+  font-size: var(--titles-size);
+  color: var(--text-color);
+  font-weight: var(--font-weight-bold);
+  height: 4rem;
+}
+
+.backButton {
+  position: absolute;
+  left: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterTop p {
+  margin: 0rem;
+  margin-left: -1.6rem;
+}
+
+.filterButtons {
+  display: flex;
+  gap: 2rem;
+  align-content: center;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.clearButton {
+  color: #D80000;
+  border: none;
+  background: none;
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.applyButton {
+  background-color: var(--ziggy);
+  color: var(--background-color);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+  cursor: pointer;
+  padding: 0.8rem 1.6rem;
+}

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./filter.module.css";
 import { filterService } from "../../services/filterService";
-// import Lottie from "lottie-react";
-// import loadingZiggy from "../../assets/lottie/loadingZiggy.json";
 import ErrorPopUp from "../errorPopUp/errorPopUp";
+import backArrow from "../../assets/arrows/backFilter.svg";
 
 export default function Filter({ onApplyFilter }) {
   const [categories, setCategories] = useState([]);
@@ -13,6 +12,8 @@ export default function Filter({ onApplyFilter }) {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [isLoadingFilters, setIsLoadingFilters] = useState(false);
   const [error, setError] = useState(null);
+  const [categoriesWithFilters, setCategoriesWithFilters] = useState({});
+  const [filtersByCategory, setFiltersByCategory] = useState({});
 
   useEffect(() => {
     const loadCategories = async () => {
@@ -40,10 +41,11 @@ export default function Filter({ onApplyFilter }) {
         try {
           setIsLoadingFilters(true);
           setFilters([]);
-          setSelectedFilters([]);
           const data =
             await filterService.fetchFiltersByCategory(selectedCategory);
           setFilters(data);
+          const savedFilters = filtersByCategory[selectedCategory] || [];
+          setSelectedFilters(savedFilters);
         } catch (err) {
           setError(err.message || "Failed to load filters");
         } finally {
@@ -52,7 +54,7 @@ export default function Filter({ onApplyFilter }) {
       };
       loadFilters();
     }
-  }, [selectedCategory]);
+  }, [selectedCategory, filtersByCategory]);
 
   const handleCategoryChange = (categoryId) => {
     setSelectedCategory(categoryId);
@@ -60,78 +62,134 @@ export default function Filter({ onApplyFilter }) {
 
   const handleFilterToggle = (filterId) => {
     setSelectedFilters((prev) => {
-      if (prev.includes(filterId)) {
-        return prev.filter((id) => id !== filterId);
-      } else {
-        return [...prev, filterId];
-      }
+      const newFilters = prev.includes(filterId)
+        ? prev.filter((id) => id !== filterId)
+        : [...prev, filterId];
+
+      setFiltersByCategory((prevState) => ({
+        ...prevState,
+        [selectedCategory]: newFilters,
+      }));
+
+      setCategoriesWithFilters((prevState) => ({
+        ...prevState,
+        [selectedCategory]: newFilters.length > 0,
+      }));
+
+      return newFilters;
     });
   };
 
   const handleClearFilters = () => {
     setSelectedFilters([]);
+    setFiltersByCategory({});
+    setCategoriesWithFilters({});
   };
 
   const handleApplyFilters = () => {
     if (onApplyFilter) {
-      onApplyFilter(selectedFilters);
+      const allFilters = Object.values(filtersByCategory).flat();
+      onApplyFilter(allFilters);
     }
+  };
+
+  const handleBackToCategories = () => {
+    setSelectedCategory("");
   };
 
   return (
     <div className={styles.filter}>
-      <div className={styles.categoryTop}>
-        <p>Vælg kategori</p>
-      </div>
-
-      <div className={styles.categories}>
-        {isLoadingCategories ? (
-          <p>Loading...</p>
-        ) : (
-          <div className={styles.categoryList}>
-            {categories.map((category) => (
-              <label key={category.id} className={styles.categoryOptions}>
-                <input
-                  type="radio"
-                  name="category"
-                  value={category.id}
-                  checked={selectedCategory === category.id}
-                  onChange={() => handleCategoryChange(category.id)}
-                />
-                <span>{category.title || category.name}</span>
-              </label>
-            ))}
+      {!selectedCategory ? (
+        <>
+          <div className={styles.categoryTop}>
+            <p>Vælg kategori</p>
           </div>
-        )}
-      </div>
 
-      <div className={styles.filters}>
-        {isLoadingFilters ? (
-          <p>Loading...</p>
-        ) : (
-          <div className={styles.filterList}>
-            {filters.map((filter) => (
-              <label key={filter.id} className={styles.filterOptions}>
-                <input
-                  type="checkbox"
-                  checked={selectedFilters.includes(filter.id)}
-                  onChange={() => handleFilterToggle(filter.id)}
-                />
-                <span>{filter.name}</span>
-              </label>
-            ))}
+          <div className={styles.categories}>
+            {isLoadingCategories ? (
+              <p>Loading...</p>
+            ) : (
+              <div className={styles.categoryList}>
+                {categories.map((category) => (
+                  <label key={category.id} className={styles.categoryOptions}>
+                    <input
+                      type="radio"
+                      name="category"
+                      value={category.id}
+                      checked={selectedCategory === category.id}
+                      onChange={() => handleCategoryChange(category.id)}
+                    />
+                    <span
+                      className={`${styles.categoryName} ${
+                        categoriesWithFilters[category.id]
+                          ? styles.categoryWithFilters
+                          : ""
+                      }`}
+                    >
+                      {category.title || category.name}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            )}
           </div>
-        )}
-      </div>
+          <div className={styles.filterButtons}>
+            <button className={styles.clearButton} onClick={handleClearFilters}>
+              Ryd filtre
+            </button>
+            <button className={styles.applyButton} onClick={handleApplyFilters}>
+              Anvend filtre
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={styles.filterTop}>
+            <button
+              className={styles.backButton}
+              onClick={handleBackToCategories}
+            >
+              <img
+                src={backArrow}
+                alt="Tilbage"
+                className={styles.backFilter}
+              />
+            </button>
+            <p>
+              {categories.find((cat) => cat.id === selectedCategory)?.title ||
+                categories.find((cat) => cat.id === selectedCategory)?.name}
+            </p>
+          </div>
 
-      <div className={styles.filterButtons}>
-        <button className={styles.clearButton} onClick={handleClearFilters}>
-          Ryd filtre
-        </button>
-        <button className={styles.applyButton} onClick={handleApplyFilters}>
-          Anvend filtre
-        </button>
-      </div>
+          <div className={styles.filters}>
+            {isLoadingFilters ? (
+              <p>Loading...</p>
+            ) : (
+              <div className={styles.filterList}>
+                {filters.map((filter) => (
+                  <label key={filter.id} className={styles.filterOptions}>
+                    <input
+                      type="checkbox"
+                      checked={selectedFilters.includes(filter.id)}
+                      onChange={() => handleFilterToggle(filter.id)}
+                    />
+                    <span className={styles.filterName}>{filter.name}</span>
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className={styles.filterButtons}>
+            <button className={styles.clearButton} onClick={handleClearFilters}>
+              Ryd filtre
+            </button>
+            <button className={styles.applyButton} onClick={handleApplyFilters}>
+              Anvend filtre
+            </button>
+          </div>
+        </>
+      )}
 
       {error && <p>{error}</p>}
 
