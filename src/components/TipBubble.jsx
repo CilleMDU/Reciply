@@ -41,7 +41,9 @@ export default function TipBubble({
             Så kan vi se hvad man kan
             erstatte sukker med
             </p>
-            <img className="ziggyTip" src="src/assets/mascots/ziggy.svg" alt="ziggy" />
+            <div className="ziggyBox">
+                  <img className="ziggyTip" src="src/assets/mascots/ziggy.svg" alt="ziggy" />
+            </div>
         </div>
         </div>
   );
