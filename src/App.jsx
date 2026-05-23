@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
 import Feed from "./pages/feed/feed";
 import ErrorPage from "./pages/errorPage/errorPage";
+import RecipeCreationFirst from "./pages/recipeCreation/recipePicture/recipePicture";
 import "./App.css";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Feed />} />
+        <Route path="/createRecipeFirst" element={<RecipeCreationFirst />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

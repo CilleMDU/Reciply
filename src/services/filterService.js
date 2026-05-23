@@ -10,7 +10,7 @@ const headers = {
 export const filterService = {
   fetchCategories: async () => {
     try {
-      const response = await fetch(`${URL}filter_categories`, {
+      const response = await fetch(`${URL}/rest/v1/filter_categories`, {
         method: "GET",
         headers,
       });
@@ -27,7 +27,7 @@ export const filterService = {
   fetchFiltersByCategory: async (categoryId) => {
     try {
       const response = await fetch(
-        `${URL}filters?category_id=eq.${categoryId}`,
+        `${URL}/rest/v1/filters?category_id=eq.${categoryId}`,
         {
           method: "GET",
           headers,
@@ -45,7 +45,7 @@ export const filterService = {
 
   fetchAllFilters: async () => {
     try {
-      const response = await fetch(`${URL}filters`, {
+      const response = await fetch(`${URL}/rest/v1/filters`, {
         method: "GET",
         headers,
       });
