@@ -130,6 +130,7 @@
 .addPicture.pictureSelected {
   width: 14rem;
   height: 4rem;
+  font-size: var(--text-size);
 }
 
 .previewImage {
