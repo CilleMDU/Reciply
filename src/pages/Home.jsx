@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "../components/header";
+import Header from "../components/Header";
 import Stories from "../components/Stories";
 import FeedCard from "../components/FeedCard";
 import TipBubble from "../components/TipBubble";
