@@ -22,8 +22,7 @@ export default function RecipePicture() {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
-
-    // Create preview URL
+    
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
