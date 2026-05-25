@@ -26,6 +26,7 @@
 
   /* Border radius */
   --border-radius: 0.5rem;
+  
   /* Mascots */
   --ziggy-img: url("./assets/ziggy.svg");
   --buzzy-img: url("./assets/buzzy.svg");
