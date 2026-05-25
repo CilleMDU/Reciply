@@ -21,7 +21,7 @@ export default function FilterAdd() {
                 <img src={back} alt="tilbage til opskriftsdetaljer" />
             </button>
              <p className={styles.filterAddTitle}>
-            Vælg de filtre der passer til dine opskrifter
+            Vælg de filtre der <br /> passer til dine opskrifter
           </p>
         </div>
         <Filter onApplyFilter={handleApplyFilter} />

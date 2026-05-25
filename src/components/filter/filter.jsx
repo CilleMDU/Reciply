@@ -54,17 +54,20 @@ export default function Filter({ onApplyFilter }) {
       };
       loadFilters();
     }
-  }, [selectedCategory, filtersByCategory]);
+  }, [selectedCategory]);
 
   const handleCategoryChange = (categoryId) => {
     setSelectedCategory(categoryId);
   };
 
   const handleFilterToggle = (filterId) => {
+    const filterObject = filters.find((f) => f.id === filterId);
+
     setSelectedFilters((prev) => {
-      const newFilters = prev.includes(filterId)
-        ? prev.filter((id) => id !== filterId)
-        : [...prev, filterId];
+      const isSelected = prev.some((f) => f.id === filterId);
+      const newFilters = isSelected
+        ? prev.filter((f) => f.id !== filterId)
+        : [...prev, filterObject];
 
       setFiltersByCategory((prevState) => ({
         ...prevState,
@@ -170,7 +173,7 @@ export default function Filter({ onApplyFilter }) {
                   <label key={filter.id} className={styles.filterOptions}>
                     <input
                       type="checkbox"
-                      checked={selectedFilters.includes(filter.id)}
+                      checked={selectedFilters.some((f) => f.id === filter.id)}
                       onChange={() => handleFilterToggle(filter.id)}
                     />
                     <span className={styles.filterName}>{filter.name}</span>

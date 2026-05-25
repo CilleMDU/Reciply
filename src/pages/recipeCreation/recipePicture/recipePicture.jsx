@@ -1,5 +1,5 @@
 import styles from "./recipePicture.module.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 import { recipeService } from "../../../services/recipeService";
 import { useNavigate } from "react-router-dom";
 import LoadingScreen from "../../../components/loadingScreen/loadingScreen";
@@ -12,6 +12,7 @@ export default function RecipePicture() {
   const [isUploading, setIsUploading] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const descriptionTextareaRef = useRef(null);
   const navigate = useNavigate();
   const {
     setRecipeId,
@@ -19,10 +20,18 @@ export default function RecipePicture() {
     setDescription: setContextDescription,
   } = useContext(RecipeContext);
 
+  useEffect(() => {
+    if (descriptionTextareaRef.current) {
+      descriptionTextareaRef.current.style.height = "auto";
+      descriptionTextareaRef.current.style.height =
+        descriptionTextareaRef.current.scrollHeight + "px";
+    }
+  }, [description]);
+
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
-    
+
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -139,6 +148,7 @@ export default function RecipePicture() {
             </div>
             <div className={styles.recipeDescription}>
               <textarea
+                ref={descriptionTextareaRef}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Hvad har du at sige om denne opskrift?"

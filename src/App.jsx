@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/createRecipeFirst" element={<RecipeCreationFirst />} />
+        <Route path="/createRecipe" element={<RecipeCreationFirst />} />
         <Route path="/recipeDetails" element={<RecipeCreationSecond />} />
         <Route path="/filterAdd" element={<FilterAdd />} />
         <Route path="*" element={<ErrorPage />} />
