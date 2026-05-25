@@ -4,6 +4,7 @@ import Feed from "./pages/feed/feed";
 import ErrorPage from "./pages/errorPage/errorPage";
 import RecipeCreationFirst from "./pages/recipeCreation/recipePicture/recipePicture";
 import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Feed />} />
+        <Route path="/homepage" element={<Home />} />
         <Route path="/createRecipeFirst" element={<RecipeCreationFirst />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

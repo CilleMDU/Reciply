@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #F2F0E7;
+}
+
+.home {
+  min-height: 100vh;
+  background: #F2F0E7;
+  padding-bottom: 120px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+
+.logo {
+  width: 85px;
+  height: auto;
+}
+
+.plus-btn {
+  border: none;
+  background: transparent;
+  color: #9ABC04;
+}
+
+.maskot-ikon {
+  width: 40px;
+  height: auto;
+}
+
+.stories {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 10px 24px 30px;
+}
+
+.story img {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feed-card {
+  padding: 0 24px;
+  }
+
+.feed-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.food-image {
+  width: 100%;
+  border-radius: 8px;
+  height: 620px;
+  object-fit: cover;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #88847A;
+}
+
+.dots .active {
+  background: #2C2C2C;
+}
+ .visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.feed-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.feed-text {
+  margin-top: 14px;
+}
+
+.feed-text span {
+  color: #2C2C2C;
+  font-size: 14px;
+}
+
+.tip-bubble {
+  position: fixed;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #F2F0E7;
+  border: 2px solid #2C2C2C;
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 185px;
+  height: 102px;
+}
+.tip-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 40px;
+  width: 24px;
+  height: 24px;
+  background: #F2F0E7;
+  border-left: 2px solid #2C2C2C;
+  border-bottom: 2px solid #2C2C2C;
+  transform: rotate(-45deg);
+}
+
+.ziggyBox {
+     width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.ziggyTip {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.tipBrod{
+    display: flex;
+    flex-direction: row;
+}
+
+.horizontal-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+
+  scroll-snap-type: x mandatory;
+}
+
+.horizontal {
+  min-width: 100%;
+  scroll-snap-align: center;
+}
+
+.food-image {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.commentar{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.tidspunkt{
+    color: #C2B8A7;
+}
