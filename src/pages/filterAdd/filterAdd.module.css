@@ -26,9 +26,44 @@
 
   /* Border radius */
   --border-radius: 0.5rem;
+  
   /* Mascots */
   --ziggy-img: url("./assets/ziggy.svg");
   --buzzy-img: url("./assets/buzzy.svg");
   --cherry-img: url("./assets/cherry.svg");
   --crispy-img: url("./assets/crispy.svg");
+}
+
+.filterAddContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  max-width: 37.4rem;
+}
+
+.filterAddTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  gap: 2rem;
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+  color: var(--text-color);
+  font-weight: var(--font-weight-bold);
+  height: 4rem;
+}
+
+.backButton {
+    position: absolute;
+  left: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

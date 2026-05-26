@@ -1,23 +1,19 @@
-const URL = import.meta.env.VITE_SUPABASE_URL;
-const KEY = import.meta.env.VITE_SUPABASE_APIKEY;
+import { createClient } from "@supabase/supabase-js";
 
-const headers = {
-  "Content-Type": "application/json",
-  apikey: KEY,
-  Authorization: `Bearer ${KEY}`,
-};
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_APIKEY,
+);
 
 export const filterService = {
   fetchCategories: async () => {
     try {
-      const response = await fetch(`${URL}/rest/v1/filter_categories`, {
-        method: "GET",
-        headers,
-      });
-      if (!response.ok) {
-        throw new Error("Failed to fetch categories");
-      }
-      return await response.json();
+      const { data, error } = await supabase
+        .from("filter_categories")
+        .select("*");
+
+      if (error) throw error;
+      return data;
     } catch (error) {
       console.error("Error fetching categories:", error);
       throw error;
@@ -26,17 +22,13 @@ export const filterService = {
 
   fetchFiltersByCategory: async (categoryId) => {
     try {
-      const response = await fetch(
-        `${URL}/rest/v1/filters?category_id=eq.${categoryId}`,
-        {
-          method: "GET",
-          headers,
-        },
-      );
-      if (!response.ok) {
-        throw new Error("Failed to fetch filters");
-      }
-      return await response.json();
+      const { data, error } = await supabase
+        .from("filters")
+        .select("*")
+        .eq("category_id", categoryId);
+
+      if (error) throw error;
+      return data;
     } catch (error) {
       console.error("Error fetching filters:", error);
       throw error;
@@ -45,14 +37,10 @@ export const filterService = {
 
   fetchAllFilters: async () => {
     try {
-      const response = await fetch(`${URL}/rest/v1/filters`, {
-        method: "GET",
-        headers,
-      });
-      if (!response.ok) {
-        throw new Error("Failed to fetch all filters");
-      }
-      return await response.json();
+      const { data, error } = await supabase.from("filters").select("*");
+
+      if (error) throw error;
+      return data;
     } catch (error) {
       console.error("Error fetching all filters:", error);
       throw error;
