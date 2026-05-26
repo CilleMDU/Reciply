@@ -13,8 +13,16 @@ import { FilterContext } from "../../../contexts/filterContext";
 export default function RecipeDetails() {
   const [isSaving, setIsSaving] = useState(false);
   const navigate = useNavigate();
-  const { recipeId, title } = useContext(RecipeContext);
-  const { selectedFilters } = useContext(FilterContext);
+  const {
+    recipeId,
+    title,
+    setRecipeId,
+    ingredients,
+    setIngredients,
+    steps,
+    setSteps,
+  } = useContext(RecipeContext);
+  const { selectedFilters, setSelectedFilters } = useContext(FilterContext);
   const ingredientsRef = useRef(null);
   const stepsRef = useRef(null);
 
@@ -25,23 +33,23 @@ export default function RecipeDetails() {
   const handleSaveRecipe = async () => {
     setIsSaving(true);
     try {
-      const ingredients = ingredientsRef.current?.getIngredients() || [];
-      const steps = stepsRef.current?.getSteps() || [];
+      const currentIngredients = ingredients || [];
+      const currentSteps = steps || [];
 
-      if (ingredients.length === 0 || steps.length === 0) {
+      if (currentIngredients.length === 0 || currentSteps.length === 0) {
         alert("Du skal tilføje mindst én ingrediens og ét trin");
         setIsSaving(false);
         return;
       }
 
-      for (const ingredient of ingredients) {
+      for (const ingredient of currentIngredients) {
         await recipeService.createIngredient(recipeId, {
           name: ingredient.name,
           amount: ingredient.amount,
         });
       }
 
-      for (const step of steps) {
+      for (const step of currentSteps) {
         await recipeService.createStep(recipeId, {
           description: step.description,
           step_number: step.stepNumber,
@@ -49,8 +57,13 @@ export default function RecipeDetails() {
       }
 
       for (const filter of selectedFilters) {
-        await recipeService.addRecipeCategory(recipeId, filter.id);
+        await recipeService.addRecipeFilter(recipeId, filter.id);
       }
+
+      setSelectedFilters([]);
+      setRecipeId(null);
+      setIngredients([]);
+      setSteps([]);
 
       navigate("/");
     } catch (error) {

@@ -1,12 +1,23 @@
-import { useState, useImperativeHandle, forwardRef } from "react";
+import {
+  useState,
+  useImperativeHandle,
+  forwardRef,
+  useContext,
+  useEffect,
+} from "react";
 import styles from "./ingrediens.module.css";
 import remove from "../../../assets/icons/exit.svg";
 import add from "../../../assets/icons/add.svg";
 import edit from "../../../assets/icons/edit.svg";
 import check from "../../../assets/icons/check.svg";
+import { RecipeContext } from "../../../contexts/recipeContext";
 
 const Ingrediens = forwardRef((props, ref) => {
-  const [ingredients, setIngredients] = useState([]);
+  const {
+    ingredients: contextIngredients,
+    setIngredients: setContextIngredients,
+  } = useContext(RecipeContext);
+  const [ingredients, setIngredients] = useState(contextIngredients || []);
   const [newIngredient, setNewIngredient] = useState({ name: "", amount: "" });
   const [showIngredientForm, setShowIngredientForm] = useState(false);
   const [confirmedIngredients, setConfirmedIngredients] = useState(new Set());
@@ -15,6 +26,10 @@ const Ingrediens = forwardRef((props, ref) => {
     name: "",
     amount: "",
   });
+
+  useEffect(() => {
+    setContextIngredients(ingredients);
+  }, [ingredients, setContextIngredients]);
 
   const handleAddIngredient = () => {
     if (newIngredient.name.trim() && newIngredient.amount.trim()) {

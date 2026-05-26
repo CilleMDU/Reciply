@@ -10,8 +10,8 @@ export const recipeService = {
     const { title, description, picture } = recipeData;
     try {
       const { data, error } = await supabase
-        .from("recipe_main")
-        .insert([{ title, description, picture }])
+        .from("recipes_main")
+        .insert([{ title, information: description, img: picture }])
         .select();
 
       if (error) throw error;
@@ -51,8 +51,8 @@ export const recipeService = {
     const { title, description, picture } = recipeData;
     try {
       const { data, error } = await supabase
-        .from("recipe_main")
-        .update({ title, description, picture })
+        .from("recipes_main")
+        .update({ title, information: description, img: picture })
         .eq("id", recipeId)
         .select();
 
@@ -67,7 +67,7 @@ export const recipeService = {
   async fetchRecipeById(recipeId) {
     try {
       const { data: recipe, error: recipeError } = await supabase
-        .from("recipe_main")
+        .from("recipes_main")
         .select("*")
         .eq("id", recipeId)
         .single();
@@ -79,16 +79,22 @@ export const recipeService = {
         .select("*")
         .eq("recipe_id", recipeId);
 
+      if (ingredientsError) throw ingredientsError;
+
       const { data: steps, error: stepsError } = await supabase
         .from("steps")
         .select("*")
         .eq("recipe_id", recipeId)
         .order("step_number", { ascending: true });
 
+      if (stepsError) throw stepsError;
+
       const { data: categories, error: categoriesError } = await supabase
         .from("recipe_categories")
         .select("*")
         .eq("recipe_id", recipeId);
+
+      if (categoriesError) throw categoriesError;
 
       return {
         ...recipe,
@@ -104,7 +110,7 @@ export const recipeService = {
 
   async fetchAllRecipes() {
     try {
-      const { data, error } = await supabase.from("recipe_main").select("*");
+      const { data, error } = await supabase.from("recipes_main").select("*");
 
       if (error) throw error;
       return data;
@@ -163,7 +169,13 @@ export const recipeService = {
     try {
       const { data, error } = await supabase
         .from("steps")
-        .insert([{ recipe_id: recipeId, ...stepData }])
+        .insert([
+          {
+            recipe_id: recipeId,
+            instruction: stepData.description,
+            step_number: stepData.step_number,
+          },
+        ])
         .select();
 
       if (error) throw error;
@@ -178,7 +190,7 @@ export const recipeService = {
     try {
       const { data, error } = await supabase
         .from("steps")
-        .update(stepData)
+        .update({ instruction: stepData.description })
         .eq("id", stepId)
         .select();
 
@@ -227,6 +239,36 @@ export const recipeService = {
       if (error) throw error;
     } catch (error) {
       console.error("Error removing recipe category:", error);
+      throw error;
+    }
+  },
+
+  async addRecipeFilter(recipeId, filterId) {
+    try {
+      const { data, error } = await supabase
+        .from("recipe_categories")
+        .insert([{ recipe_id: recipeId, filter_id: filterId }])
+        .select();
+
+      if (error) throw error;
+      return data;
+    } catch (error) {
+      console.error("Error adding recipe filter:", error);
+      throw error;
+    }
+  },
+
+  async removeRecipeFilter(recipeId, filterId) {
+    try {
+      const { error } = await supabase
+        .from("recipe_categories")
+        .delete()
+        .eq("recipe_id", recipeId)
+        .eq("filter_id", filterId);
+
+      if (error) throw error;
+    } catch (error) {
+      console.error("Error removing recipe filter:", error);
       throw error;
     }
   },

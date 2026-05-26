@@ -4,15 +4,19 @@ import {
   useEffect,
   useImperativeHandle,
   forwardRef,
+  useContext,
 } from "react";
 import styles from "./steps.module.css";
 import remove from "../../../assets/icons/exit.svg";
 import add from "../../../assets/icons/add.svg";
 import edit from "../../../assets/icons/edit.svg";
 import check from "../../../assets/icons/check.svg";
+import { RecipeContext } from "../../../contexts/recipeContext";
 
 const Steps = forwardRef((props, ref) => {
-  const [steps, setSteps] = useState([]);
+  const { steps: contextSteps, setSteps: setContextSteps } =
+    useContext(RecipeContext);
+  const [steps, setSteps] = useState(contextSteps || []);
   const [newStep, setNewStep] = useState("");
   const [showStepForm, setShowStepForm] = useState(false);
   const [confirmedSteps, setConfirmedSteps] = useState(new Set());
@@ -20,6 +24,10 @@ const Steps = forwardRef((props, ref) => {
   const [editedStep, setEditedStep] = useState("");
   const stepTextareaRef = useRef(null);
   const editStepTextareaRef = useRef(null);
+
+  useEffect(() => {
+    setContextSteps(steps);
+  }, [steps, setContextSteps]);
 
   useEffect(() => {
     if (stepTextareaRef.current) {
