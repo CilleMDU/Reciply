@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import tipIcon from "../assets/icons/tips.svg";
 
 export default function TipBubble({
   setShowBubble,
@@ -35,16 +36,7 @@ export default function TipBubble({
       ref={bubbleRef}
       className="tip-bubble"
     >
-      <h3>Lækre tips og tricks</h3>
-        <div className="tipBrod">
-            <p>
-            Så kan vi se hvad man kan
-            erstatte sukker med
-            </p>
-            <div className="ziggyBox">
-                  <img className="ziggyTip" src="src/assets/mascots/ziggy.svg" alt="ziggy" />
-            </div>
-        </div>
+      <img src={tipIcon} alt="her kan du finde tips og tricks"/>
         </div>
   );
 }
