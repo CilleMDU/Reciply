@@ -22,6 +22,75 @@ export const recipeService = {
     }
   },
 
+  async createRecipeWithRelations({
+    recipeData,
+    ingredients = [],
+    steps = [],
+    filters = [],
+    categories = [],
+  }) {
+    const createdRecipe = await this.createRecipeMain(recipeData);
+    const recipeId = createdRecipe?.[0]?.id;
+
+    if (!recipeId) {
+      throw new Error("Could not determine created recipe id");
+    }
+
+    for (const ingredient of ingredients) {
+      await this.createIngredient(recipeId, {
+        name: ingredient.name,
+        amount: ingredient.amount,
+      });
+    }
+
+    for (const step of steps) {
+      await this.createStep(recipeId, {
+        description: step.description,
+        step_number: step.stepNumber,
+      });
+    }
+
+    for (const filter of filters) {
+      await this.addRecipeFilter(recipeId, filter.id);
+    }
+
+    for (const category of categories) {
+      await this.addRecipeCategory(recipeId, category.id);
+    }
+
+    return {
+      recipeId,
+      createdRecipe,
+    };
+  },
+
+  async createRecipeRelations(
+    recipeId,
+    { ingredients = [], steps = [], filters = [], categories = [] } = {},
+  ) {
+    for (const ingredient of ingredients) {
+      await this.createIngredient(recipeId, {
+        name: ingredient.name,
+        amount: ingredient.amount,
+      });
+    }
+
+    for (const step of steps) {
+      await this.createStep(recipeId, {
+        description: step.description,
+        step_number: step.stepNumber,
+      });
+    }
+
+    for (const filter of filters) {
+      await this.addRecipeFilter(recipeId, filter.id);
+    }
+
+    for (const category of categories) {
+      await this.addRecipeCategory(recipeId, category.id);
+    }
+  },
+
   async uploadRecipeImage(file) {
     if (!file) {
       throw new Error("No file provided for upload");
@@ -96,16 +165,40 @@ export const recipeService = {
 
       if (categoriesError) throw categoriesError;
 
+      const filterIds = (categories || [])
+        .map((category) => category.filter_id)
+        .filter(Boolean);
+
+      let namedCategories = [];
+      if (filterIds.length > 0) {
+        const { data: filters, error: filtersError } = await supabase
+          .from("filters")
+          .select("id, name")
+          .in("id", filterIds);
+
+        if (filtersError) throw filtersError;
+
+        namedCategories = (filters || []).map((filter) => ({
+          id: filter.id,
+          name: filter.name,
+        }));
+      }
+
       return {
         ...recipe,
         ingredients: ingredients || [],
         steps: steps || [],
-        categories: categories || [],
+        categories: namedCategories,
       };
     } catch (error) {
       console.error("Error fetching recipe:", error);
       throw error;
     }
+  },
+
+  // Backwards-compatibility alias for older callers
+  async getRecipeById(recipeId) {
+    return this.fetchRecipeById(recipeId);
   },
 
   async fetchAllRecipes() {

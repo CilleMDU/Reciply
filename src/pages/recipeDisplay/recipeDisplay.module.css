@@ -1,0 +1,176 @@
+:root {
+  /* Colors */
+  --background-color: #f2f0e7;
+  --primary-color: #e5dac6;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
+  --text-input-color: #c2b8a7;
+  --text-color: #2c2c2c;
+  --ziggy: #9abc04;
+  --buzzy: #5273ba;
+  --cherry: #b32e40;
+  --crispy: #ffa54b;
+
+  /* Font */
+  --font-rubrik: "betania patmos", serif;
+  --font-text: "istok web", sans-serif;
+
+  /* Font size */
+  --text-size: 1.6rem;
+  --input-size: 1.2rem;
+  --titles-size: 2rem;
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius: 0.5rem;
+
+  /* Mascots */
+  --ziggy-img: url("./assets/ziggy.svg");
+  --buzzy-img: url("./assets/buzzy.svg");
+  --cherry-img: url("./assets/cherry.svg");
+  --crispy-img: url("./assets/crispy.svg");
+}
+
+.displayContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  max-width: 37.4rem;
+}
+
+.displayTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.recipeTitle {
+  font-family: var(--font-titles);
+  font-size: var(--titles-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-size);
+  color: var(--text-color);
+  margin-bottom: 0.8rem;
+}
+
+.menuContainer {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.displayImage img {
+  width: 30rem;
+  height: 22.8rem;
+}
+
+.displayFilters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.filterTag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+  color: var(--text-color);
+}
+
+.displayIngredients,
+.displaySteps,
+.displayDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0 1.6rem;
+}
+
+.sectionsTitles {
+  font-family: var(--font-titles);
+  font-size: var(--titles-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+  margin-bottom: 0.8rem;
+}
+
+.ingredientsList,
+.stepsList,
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+  color: var(--text-color);
+}
+
+.addToListButton.notAdded {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  background-color: var(--ziggy);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.8rem 1.6rem;
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+  color: var(--background-color);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.addToListButton.notAdded img {
+    width: 2.2rem;
+}
+
+.addToListButton.added{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  background-color: var(--primary-color-op);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.8rem 1.6rem;
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+  color: var(--text-input-color);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.addToListButton.added img {
+    content: url(../../assets/icons/addedToList.svg);
+    width: 2.2rem;
+}
