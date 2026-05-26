@@ -1,0 +1,62 @@
+:root {
+  /* Colors */
+  --background-color: #f2f0e7;
+  --primary-color: #e5dac6;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
+  --text-input-color: #c2b8a7;
+  --text-color: #2c2c2c;
+  --ziggy: #9abc04;
+  --buzzy: #5273ba;
+  --cherry: #b32e40;
+  --crispy: #ffa54b;
+
+  /* Font */
+  --font-rubrik: "betania patmos", serif;
+  --font-text: "istok web", sans-serif;
+
+  /* Font size */
+  --text-size: 1.6rem;
+  --input-size: 1.2rem;
+  --titles-size: 2rem;
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius: 0.5rem;
+  
+  /* Mascots */
+  --ziggy-img: url("./assets/ziggy.svg");
+  --buzzy-img: url("./assets/buzzy.svg");
+  --cherry-img: url("./assets/cherry.svg");
+  --crispy-img: url("./assets/crispy.svg");
+}
+
+.menuContainer {
+    position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 4.6rem;
+  right: 24rem;
+}
+
+.menuEdit {
+    background-color: var(--primary-color);
+    width: 13.2rem;
+    padding: 0.8rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border: var(--text-color) solid 1px;
+}
+
+.menuDelete {
+    background-color: var(--background-color);
+    width: 13.2rem;
+    padding: 0.8rem;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border: var(--text-color) solid 1px;
+    border-top: none;
+    color: #ae162a;
+}
