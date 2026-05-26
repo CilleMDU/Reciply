@@ -21,6 +21,12 @@ Cecilie Schmidt:
 - recipeDetails.jsx (+ recipeDetails.module.css)
 - recipePicture.jsx (+ recipePicture.module.css)
 - recipeDisplay.jsx (+ recipeDisplay.module.css)
+- recipeDetailsEdit.jsx (+ recipeDetailsEdit.module.css)
+- recipePictureEdit.jsx (+ recipePictureEdit.module.css)
+- lactose.jsx (+ lactose.module.css)
+- tips.jsx
+- allergiTips.jsx
+- tips.module.css
 - Alt i service folderen (To service filer)
 - index.css
 

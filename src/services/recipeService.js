@@ -196,7 +196,6 @@ export const recipeService = {
     }
   },
 
-  // Backwards-compatibility alias for older callers
   async getRecipeById(recipeId) {
     return this.fetchRecipeById(recipeId);
   },
