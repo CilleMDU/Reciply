@@ -114,7 +114,7 @@
     flex-direction: column;
     gap: 0.8rem;
     width: 100%;
-    padding: 0 1.6rem;
+    margin-left: 5.6rem;
 }
 
 .sectionsTitles {
@@ -173,4 +173,19 @@
 .addToListButton.added img {
     content: url(../../assets/icons/addedToList.svg);
     width: 2.2rem;
+}
+
+.menuOverlay,
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.menuOverlay {
+  background: transparent;
+}
+
+.backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }

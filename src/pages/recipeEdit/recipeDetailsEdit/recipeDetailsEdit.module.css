@@ -1,0 +1,81 @@
+:root {
+  /* Colors */
+  --background-color: #f2f0e7;
+  --primary-color: #e5dac6;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
+  --text-input-color: #c2b8a7;
+  --text-color: #2c2c2c;
+  --ziggy: #9abc04;
+  --buzzy: #5273ba;
+  --cherry: #b32e40;
+  --crispy: #ffa54b;
+
+  /* Font */
+  --font-rubrik: "betania patmos", serif;
+  --font-text: "istok web", sans-serif;
+
+  /* Font size */
+  --text-size: 1.6rem;
+  --input-size: 1.2rem;
+  --titles-size: 2rem;
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius: 0.5rem;
+
+  /* Mascots */
+  --ziggy-img: url("./assets/ziggy.svg");
+  --buzzy-img: url("./assets/buzzy.svg");
+  --cherry-img: url("./assets/cherry.svg");
+  --crispy-img: url("./assets/crispy.svg");
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  max-width: 37.4rem;
+}
+
+.detailsTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.opskriftTitle {
+  font-family: var(--font-text);
+  font-size: var(--titles-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.saveButton {
+  padding: 0.8rem;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: none;
+  color: var(--text-color);
+  font-size: var(--text-size);
+  font-family: var(--font-text);
+  cursor: pointer;
+}
+
+.recipeSection {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 4rem;
+  width: 100%;
+}
