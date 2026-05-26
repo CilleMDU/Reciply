@@ -9,6 +9,9 @@ import FilterAdd from "./pages/filterAdd/filterAdd";
 import "./App.css";
 import Home from "./pages/Home";
 import RecipeDisplay from "./pages/recipeDisplay/recipeDisplay";
+import TipsOgTricks from "./pages/tips/tips";
+import AllergiTips from "./pages/tips/allergiTips";
+import Lactose from "./pages/tips/lactose/lactose";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         />
         <Route path="/filterAdd" element={<FilterAdd />} />
         <Route path="/recipe/:recipeId" element={<RecipeDisplay />} />
+        <Route path="/tipsOgTricks" element={<TipsOgTricks />} />
+        <Route path="/allergiTips" element={<AllergiTips />} />
+        <Route path="/tipsOgTricks/lactose" element={<Lactose />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
