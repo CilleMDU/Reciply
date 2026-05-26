@@ -12,6 +12,7 @@ import { FilterContext } from "../../../contexts/filterContext";
 
 export default function RecipeDetails() {
   const [isSaving, setIsSaving] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(0);
   const navigate = useNavigate();
   const ingredientsRef = useRef(null);
   const stepsRef = useRef(null);
@@ -32,6 +33,7 @@ export default function RecipeDetails() {
 
   const handleSaveRecipe = async () => {
     setIsSaving(true);
+    setLoadingProgress(0);
     try {
       const currentIngredients = ingredients || [];
       const currentSteps = steps || [];
@@ -42,6 +44,7 @@ export default function RecipeDetails() {
         return;
       }
 
+      setLoadingProgress(15);
       for (const ingredient of currentIngredients) {
         await recipeService.createIngredient(recipeId, {
           name: ingredient.name,
@@ -49,6 +52,7 @@ export default function RecipeDetails() {
         });
       }
 
+      setLoadingProgress(50);
       for (const step of currentSteps) {
         await recipeService.createStep(recipeId, {
           description: step.description,
@@ -56,16 +60,20 @@ export default function RecipeDetails() {
         });
       }
 
+      setLoadingProgress(80);
       for (const filter of selectedFilters) {
         await recipeService.addRecipeFilter(recipeId, filter.id);
       }
 
+      setLoadingProgress(100);
       setSelectedFilters([]);
       setRecipeId(null);
       setIngredients([]);
       setSteps([]);
 
-      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 500);
     } catch (error) {
       console.error("Fejl ved oprettelse af opskrift:", error);
       alert("Der opstod en fejl. Prøv igen senere.");
@@ -75,7 +83,7 @@ export default function RecipeDetails() {
   };
 
   if (isSaving) {
-    return <LoadingScreen />;
+    return <LoadingScreen progress={loadingProgress} />;
   }
 
   return (

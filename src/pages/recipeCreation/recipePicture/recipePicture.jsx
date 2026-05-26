@@ -1,6 +1,7 @@
 import styles from "./recipePicture.module.css";
 import { useState, useContext, useRef, useEffect } from "react";
 import { recipeService } from "../../../services/recipeService";
+import { filterService } from "../../../services/filterService";
 import { useNavigate } from "react-router-dom";
 import LoadingScreen from "../../../components/loadingScreen/loadingScreen";
 import { RecipeContext } from "../../../contexts/recipeContext";
@@ -10,6 +11,7 @@ export default function RecipePicture() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(0);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const descriptionTextareaRef = useRef(null);
@@ -27,6 +29,29 @@ export default function RecipePicture() {
         descriptionTextareaRef.current.scrollHeight + "px";
     }
   }, [description]);
+
+  useEffect(() => {
+    const loadInitialData = async () => {
+      setIsUploading(true);
+      setLoadingProgress(0);
+
+      try {
+        setLoadingProgress(30);
+        await filterService.fetchCategories();
+
+        setLoadingProgress(70);
+        await filterService.fetchAllFilters();
+        
+        setLoadingProgress(100);
+        setTimeout(() => setIsUploading(false), 500);
+      } catch (error) {
+        console.error("Error loading initial data:", error);
+        setIsUploading(false);
+      }
+    };
+
+    loadInitialData();
+  }, []);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -86,7 +111,7 @@ export default function RecipePicture() {
   return (
     <div className={styles.container}>
       {isUploading ? (
-        <LoadingScreen />
+        <LoadingScreen progress={loadingProgress} />
       ) : (
         <>
           <div className={styles.recipeUpload}>
