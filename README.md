@@ -6,6 +6,7 @@ Signe Kjellerup Hove
 Hver elev har fået ansvaret for dele af koden. Nogle dele af koden har den ansvarlige fået assistance af en af de andre elever. Følgende er eleverne og deres ansvars områder:
 
 Cecilie Schmidt:
+- deleteConfirmation.jsx (+ deleteConfirmation.module.css)
 - errorPopUp.jsx (+ errorPopUp.module.css)
 - filter.jsx (+ filter.module.css)
 - navbar.jsx (+ navbar.module.css)
@@ -13,6 +14,7 @@ Cecilie Schmidt:
 - filterInRecipe.jsx (+ filterInRecipe.module.css)
 - ingrediens.jsx (+ ingrediens.module.css)
 - steps.jsx (+ steps.module.css)
+- recipeMenu.jsx (+ recipeMenu.module.css)
 - Alt i context folderen (To context filer og to providers)
 - errorPage.jsx (+ errorPage.module.css)
 - filterAdd.jsx (+ filterAdd.module.css)
