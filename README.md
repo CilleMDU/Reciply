@@ -1,18 +1,31 @@
-# React + Vite
+Denne opgave er blevet udarbejdet af følgende elever:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cecilie Schmidt
+Signe Kjellerup Hove
 
-Currently, two official plugins are available:
+Hver elev har fået ansvaret for dele af koden. Nogle dele af koden har den ansvarlige fået assistance af en af de andre elever. Følgende er eleverne og deres ansvars områder:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Cecilie Schmidt:
+- errorPopUp.jsx (+ errorPopUp.module.css)
+- filter.jsx (+ filter.module.css)
+- navbar.jsx (+ navbar.module.css)
+- loadingScreen.jsx (+ loadingScreen.module.css)
+- filterInRecipe.jsx (+ filterInRecipe.module.css)
+- ingrediens.jsx (+ ingrediens.module.css)
+- steps.jsx (+ steps.module.css)
+- Alt i context folderen (To context filer og to providers)
+- errorPage.jsx (+ errorPage.module.css)
+- filterAdd.jsx (+ filterAdd.module.css)
+- recipeDetails.jsx (+ recipeDetails.module.css)
+- recipePicture.jsx (+ recipePicture.module.css)
+- recipeDisplay.jsx (+ recipeDisplay.module.css)
+- Alt i service folderen (To service filer)
+- index.css
 
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Signe Kjellerup Hove:
+- FeedCard.jsx
+- Header.jsx
+- Stories.jsx
+- TipBubble.jsx
+- Home.jsx
+- home.css
