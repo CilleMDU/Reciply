@@ -13,6 +13,8 @@ import { FilterContext } from "../../../contexts/filterContext";
 export default function RecipeDetails() {
   const [isSaving, setIsSaving] = useState(false);
   const navigate = useNavigate();
+  const ingredientsRef = useRef(null);
+  const stepsRef = useRef(null);
   const {
     recipeId,
     title,
@@ -23,8 +25,6 @@ export default function RecipeDetails() {
     setSteps,
   } = useContext(RecipeContext);
   const { selectedFilters, setSelectedFilters } = useContext(FilterContext);
-  const ingredientsRef = useRef(null);
-  const stepsRef = useRef(null);
 
   const handleBack = () => {
     navigate(-1);
