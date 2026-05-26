@@ -45,25 +45,13 @@ export default function RecipeDetails() {
       }
 
       setLoadingProgress(15);
-      for (const ingredient of currentIngredients) {
-        await recipeService.createIngredient(recipeId, {
-          name: ingredient.name,
-          amount: ingredient.amount,
-        });
-      }
-
-      setLoadingProgress(50);
-      for (const step of currentSteps) {
-        await recipeService.createStep(recipeId, {
-          description: step.description,
-          step_number: step.stepNumber,
-        });
-      }
+      await recipeService.createRecipeRelations(recipeId, {
+        ingredients: currentIngredients,
+        steps: currentSteps,
+        filters: selectedFilters,
+      });
 
       setLoadingProgress(80);
-      for (const filter of selectedFilters) {
-        await recipeService.addRecipeFilter(recipeId, filter.id);
-      }
 
       setLoadingProgress(100);
       setSelectedFilters([]);

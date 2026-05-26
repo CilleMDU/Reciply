@@ -6,6 +6,7 @@ import RecipeCreationSecond from "./pages/recipeCreation/recipeDetails/recipeDet
 import FilterAdd from "./pages/filterAdd/filterAdd";
 import "./App.css";
 import Home from "./pages/Home";
+import RecipeDisplay from "./pages/recipeDisplay/recipeDisplay";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/createRecipe" element={<RecipeCreationFirst />} />
         <Route path="/recipeDetails" element={<RecipeCreationSecond />} />
         <Route path="/filterAdd" element={<FilterAdd />} />
+        <Route path="/recipe/:recipeId" element={<RecipeDisplay />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

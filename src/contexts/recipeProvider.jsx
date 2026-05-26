@@ -5,6 +5,7 @@ export default function RecipeProvider({ children }) {
   const [recipeId, setRecipeId] = useState(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [steps, setSteps] = useState([]);
 
@@ -17,6 +18,8 @@ export default function RecipeProvider({ children }) {
         setTitle,
         description,
         setDescription,
+        image,
+        setImage,
         ingredients,
         setIngredients,
         steps,
