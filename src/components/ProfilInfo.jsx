@@ -1,7 +1,7 @@
 import { useState } from "react";
 
   
-export default function ProfilInfo() { 
+export default function ProfilInfo({activeTab, setActiveTab}) { 
 
     const [showMenu, setShowMenu] =
         useState(false);
@@ -27,11 +27,11 @@ export default function ProfilInfo() {
                         } />
 
                     {showMenu && (
-                    <div className="profilmenu">
-                    <h3>Rediger profil</h3>
-                    <h3>Skift maskot</h3>
-                    <h3>Slet profil</h3>
-                    </div>
+                        <div className="profilmenu">
+                            <h3>Rediger profil</h3>
+                            <h3>Skift maskot</h3>
+                            <h3>Slet profil</h3>
+                        </div>
                     )}
                 </div>
             </header>
@@ -46,6 +46,51 @@ export default function ProfilInfo() {
                 <h2>Følgere</h2>
             </section>
 
+            
+            <div className="profilNav">
+
+                <img
+                    src={
+                        activeTab === "opslag"
+                            ? "/ikoner/opslagActive.svg"
+                            : "/ikoner/opslagInactive.svg"
+                    }
+
+                    alt="profilOpslag"
+
+                    onClick={() =>
+                        setActiveTab("opslag")
+                    }
+                />
+
+                <img
+                    src={
+                        activeTab === "liked"
+                            ? "/ikoner/profilHeartActive.svg"
+                            : "/ikoner/profilHeartInactive.svg"
+                    }
+
+                    alt="profilHeart"
+
+                    onClick={() =>
+                        setActiveTab("liked")
+                    }
+                />
+
+                <img
+                    src={
+                        activeTab === "gemt"
+                            ? "/ikoner/profilGemOpskriftActive.svg"
+                            : "/ikoner/profilGemOpskriftInactive.svg"
+                    }
+                    alt="profilOpskrift"
+
+                    onClick={() =>
+                        setActiveTab("gemt")
+                    }
+                />
+
+            </div>
         </div>
-    )
+    );
 }

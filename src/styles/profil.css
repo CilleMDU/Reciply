@@ -73,3 +73,9 @@
     border-radius: 5px;
     
 }
+
+.profilNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
