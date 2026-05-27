@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Feed />} />
+        
         <Route path="/homepage" element={<Home />} />
         <Route path="/profilpage" element={<Profil/>}/>
         <Route path="/createRecipeFirst" element={<RecipeCreationFirst />} />
