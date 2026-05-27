@@ -1,5 +1,8 @@
-export default function FeedCard({ profilPic, foodPics, profilNavn, profilComment, tid, }) {
+import { useNavigate } from "react-router";
 
+export default function FeedCard({ profilPic, foodPics, profilNavn, profilComment, tid, recipeId, }) {
+
+  const navigate = useNavigate()
 
     let needDots = false;
 
@@ -31,10 +34,11 @@ export default function FeedCard({ profilPic, foodPics, profilNavn, profilCommen
   {foodPics.map((img, index) => (
     <img
       key={index}
-      src={img}
-      alt="food"
-      className="food-image horizontal"
-    />
+        src={img}
+        alt="food"
+        className="food-image horizontal"
+        onClick={() => navigate(`/recipe/${recipeId}`)}
+      />
   ))}
 </div>
           
