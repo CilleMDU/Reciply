@@ -147,7 +147,7 @@ const Steps = forwardRef((props, ref) => {
           <div className={styles.stepInputs}>
             <textarea
               ref={stepTextareaRef}
-              placeholder="Beskriv første trin..."
+              placeholder="Beskriv næste trin..."
               value={newStep}
               onChange={(e) => setNewStep(e.target.value)}
               className={styles.stepsInput}
