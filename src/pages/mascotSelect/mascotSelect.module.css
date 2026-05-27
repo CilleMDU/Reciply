@@ -1,0 +1,147 @@
+:root {
+  /* Colors */
+  --background-color: #f2f0e7;
+  --primary-color: #e5dac6;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
+  --text-input-color: #c2b8a7;
+  --text-color: #2c2c2c;
+  --ziggy: #9abc04;
+  --buzzy: #5273ba;
+  --cherry: #b32e40;
+  --crispy: #ffa54b;
+
+  /* Font */
+  --font-rubrik: "betania patmos", serif;
+  --font-text: "istok web", sans-serif;
+
+  /* Font size */
+  --text-size: 1.6rem;
+  --input-size: 1.2rem;
+  --titles-size: 2rem;
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius: 0.5rem;
+  
+  /* Mascots */
+  --ziggy-img: url("./assets/ziggy.svg");
+  --buzzy-img: url("./assets/buzzy.svg");
+  --cherry-img: url("./assets/cherry.svg");
+  --crispy-img: url("./assets/crispy.svg");
+}
+
+.mascotContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  max-width: 37.4rem;
+}
+
+.mascotTop {
+    display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  width: 22rem;
+}
+
+.mascotText {
+  font-family: var(--font-text);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--titles-size);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.exitIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.saveButton {
+  background-color: var(--ziggy);
+  color: var(--background-color);
+  font-family: var(--font-text);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--titles-size);
+  padding: 1.6rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.mascotOptions {
+  display: grid;
+  grid-template-columns: 2fr auto;
+  gap: 3.2rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.mascotButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.crispyImg {
+    width: 11.2rem;
+    height: auto;
+}
+
+.buzzyImg {
+    width: 13.2rem;
+    height: auto;
+}
+
+.cherryImg {
+    width: 16.4rem;
+    height: auto;
+}
+
+.ziggyImg {
+    width: 13.6rem;
+    height: auto;
+}
+
+.btnAndName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.mascotName {
+    font-family: var(--font-text);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--text-size);
+    color: var(--text-color);
+}
+
+:global(.crispyTheme)
+{
+  .saveButton {
+    background-color: var(--crispy);
+  }
+}
+
+:global(.buzzyTheme)
+{
+  .saveButton {
+    background-color: var(--buzzy);
+  }
+}
+
+:global(.cherryTheme)
+{
+  .saveButton {
+    background-color: var(--cherry);
+  }
+}

@@ -12,6 +12,7 @@ import RecipeDisplay from "./pages/recipeDisplay/recipeDisplay";
 import TipsOgTricks from "./pages/tips/tips";
 import AllergiTips from "./pages/tips/allergiTips";
 import Lactose from "./pages/tips/lactose/lactose";
+import Mascots from "./pages/mascotSelect/mascotSelect";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/tipsOgTricks" element={<TipsOgTricks />} />
         <Route path="/allergiTips" element={<AllergiTips />} />
         <Route path="/tipsOgTricks/lactose" element={<Lactose />} />
+        <Route path="/mascots" element={<Mascots />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
