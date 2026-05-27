@@ -1,0 +1,42 @@
+.sogfelt{
+    width: 308px;
+    height: 52px;
+    background-color: #E5DAC6;
+    border-radius: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+.indkob_main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+}
+.enkelListe{
+    display: flex;
+    width: 126px;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+
+.indkobFood{
+     width: 126px;
+     height: 126px;
+}
+.indkobBilledeWrapper{
+    display: flex;
+    flex-direction: row;
+    width: 284px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}

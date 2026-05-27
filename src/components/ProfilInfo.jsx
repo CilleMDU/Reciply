@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
   
-export default function ProfilInfo({activeTab, setActiveTab}) { 
+export default function ProfilInfo({ activeTab, setActiveTab }) { 
+    
+    const navigate = useNavigate();
+
+    const handleGoToCreateRecipe = () => {
+      navigate("/createRecipe");
+    }
 
     const [showMenu, setShowMenu] =
         useState(false);
@@ -12,7 +19,7 @@ export default function ProfilInfo({activeTab, setActiveTab}) {
             
             
             <header className="header">
-                <button className="plus-btn">
+               <button className="plus-btn" onClick={handleGoToCreateRecipe}>
                     <img src="public/ikoner/plus.svg" alt="plus" />
                 </button>
 
