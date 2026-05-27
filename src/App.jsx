@@ -14,15 +14,13 @@ import TipsOgTricks from "./pages/tips/tips";
 import AllergiTips from "./pages/tips/allergiTips";
 import Lactose from "./pages/tips/lactose/lactose";
 import Mascots from "./pages/mascotSelect/mascotSelect";
-import Profile from "./pages/profil";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/homepage" element={<Home />} />
-        <Route path="/profilpage" element={<Profil/>}/>
+        <Route path="/profil" element={<Profil/>}/>
         <Route path="/createRecipeFirst" element={<RecipeCreationFirst />} />
         <Route path="/" element={<Home />} />
         <Route path="/createRecipe" element={<RecipeCreationFirst />} />
@@ -39,7 +37,6 @@ function App() {
         <Route path="/tipsOgTricks/lactose" element={<Lactose />} />
         <Route path="/mascots" element={<Mascots />} />
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   );

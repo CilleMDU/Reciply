@@ -86,7 +86,7 @@
   }
 
   .errorImage {
-    content: url("../../assets/mascots/mascotsSad/sadCrispy.svg");
+    content: url("../../assets/mascots/mascotsConfused/crispyConfused.svg");
     }
 }
 
@@ -96,7 +96,7 @@
   }
 
   .errorImage {
-    content: url("../../assets/mascots/mascotsSad/sadBuzzy.svg");
+    content: url("../../assets/mascots/mascotsConfused/buzzyConfused.svg");
     }
 }
 
@@ -106,6 +106,6 @@
   }
 
   .errorImage {
-    content: url("../../assets/mascots/mascotsSad/sadCherry.svg");
+    content: url("../../assets/mascots/mascotsConfused/cherryConfusedsvg.svg");
     }
 }

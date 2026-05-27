@@ -30,7 +30,7 @@ export default function Navbar() {
           <img src={isActive ? indkøbAct : indkøb} alt="indkøbsliste" />
         )}
       </NavLink>
-      <NavLink to="/profile" className={styles.navProfil}>
+      <NavLink to="/profil" className={styles.navProfil}>
         {({ isActive }) => (
           <img src={isActive ? profilAct : profil} alt="profil" />
         )}

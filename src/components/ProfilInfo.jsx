@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function ProfilInfo({ activeTab, setActiveTab }) {
-  const useNavigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleGoToMascots = () => {
-    useNavigate("/mascots");
+    navigate("/mascots");
   };
 
   const [showMenu, setShowMenu] = useState(false);
