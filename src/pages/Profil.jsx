@@ -1,17 +1,39 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 import Gemt from "../components/Gemt";
 import Liked from "../components/Liked";
 import Opslag from "../components/Opslag";
 import ProfilInfo from "../components/ProfilInfo"
+import { recipeService } from "../services/recipeService";
+
 export default function Profil() {
 
     const [activeTab, setActiveTab] =
         useState("opslag");
     
+  const [opslagOpskrift, setOpslagOpskrift] = useState([]);
+    
+    
+useEffect(() => {
+
+    loadRecipes();
+  }, []);
+
+  async function loadRecipes(){
+  try {
+    const recipes = await recipeService.fetchAllRecipes();
+
+    setOpslagOpskrift(recipes)
+  } catch (error) {
+    console.error("Failed to load recipes:", error);
+  }
+    };
+    console.log(opslagOpskrift)
+
+    
     return (
         <>
-            <div>
+            <div> 
 
                 <ProfilInfo
                     activeTab={activeTab}
@@ -19,7 +41,9 @@ export default function Profil() {
                 />
 
                 {activeTab === "opslag" && (
-                    <Opslag />
+                    <Opslag
+                        recipes={[]}
+                    />
                 )}
 
                 {activeTab === "liked" && (
@@ -31,6 +55,8 @@ export default function Profil() {
                 )}
 
             </div>
+
+
         </>
     );
 }

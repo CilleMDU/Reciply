@@ -48,7 +48,7 @@ export default function ProfilInfo({activeTab, setActiveTab}) {
 
             
             <div className="profilNav">
-
+                
                 <img
                     src={
                         activeTab === "opslag"
