@@ -28,7 +28,7 @@ export default function FilterInRecipe() {
           onClick={() => navigate("/filterAdd")}
         >
           <img src={add} alt="tilføj" />
-          Tilføj filtre
+          Rediger filtre
         </button>
       </div>
     </div>
