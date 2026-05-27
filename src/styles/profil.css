@@ -83,4 +83,7 @@
 .recipe{
     width: 126px;
     height: 126px;
+    border-style: solid;
+    border-color: #2C2C2C;
 }
+

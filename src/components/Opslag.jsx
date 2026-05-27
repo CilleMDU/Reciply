@@ -1,7 +1,8 @@
-
+import { useNavigate } from "react-router";
 export default function Opslag({ recipes }) {
 
-
+    const navigate = useNavigate()
+    
     return (
 
         <div>
@@ -36,6 +37,7 @@ export default function Opslag({ recipes }) {
                             key={index}
                             src={recipe.img}
                             alt="opskrift"
+                            onClick={() => navigate(`/recipe/${recipe.id}`)}
                         />
 
                     ))}

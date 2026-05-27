@@ -41,7 +41,7 @@ export default function Home() {
       profilNavn: "lucia_jensen",
       profilComment: "Super lækker aftensmad jeg lavede den anden dag",
       tid: "For 2 min siden",
-      recipeId: 2,
+      recipeId: 3,
     },
 
     {
@@ -53,7 +53,7 @@ export default function Home() {
       profilNavn: "claireholt",
       profilComment: "Hvis du leder efter en lækker taco opskrift så er...",
       tid: "For 30 min siden",
-      recipeId: "",
+      recipeId: 4,
     },
 
     {
@@ -65,7 +65,7 @@ export default function Home() {
       profilNavn: "mathias.bennick",
       profilComment: "OMG en god pastaret jeg spise igår",
       tid: "For 1 time siden",
-      recipeId: "",
+      recipeId: 5,
     },
 
     {
@@ -77,7 +77,7 @@ export default function Home() {
       profilNavn: "nielsenmathilde",
       profilComment: "Jeg er så stolt over de pandekager jeg fik lavet",
       tid: "For 3 timer siden",
-      recipeId: "",
+      recipeId: 2,
     },
 
     {
@@ -89,7 +89,7 @@ export default function Home() {
       profilNavn: "larsjensen",
       profilComment: "Jeg elsker PIZZA",
       tid: "For 1 dag siden",
-      recipeId: "",
+      recipeId: 2,
     },
   ];
 
