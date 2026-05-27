@@ -3,7 +3,7 @@ import { useContext } from "react";
 import Filter from "../../components/filter/filter";
 import { FilterContext } from "../../contexts/filterContext";
 import styles from "./filterAdd.module.css";
-import back from "../../assets/arrows/backArrowGreen.svg";
+import back from "../../assets/arrows/back.svg";
 
 export default function FilterAdd() {
   const navigate = useNavigate();
@@ -14,17 +14,17 @@ export default function FilterAdd() {
     navigate("/recipeDetails");
   };
 
-    return (
-      <div className={styles.filterAddContainer}>
-        <div className={styles.filterAddTop}>
-            <button className={styles.backButton} onClick={() => navigate(-1)}>
-                <img src={back} alt="tilbage til opskriftsdetaljer" />
-            </button>
-             <p className={styles.filterAddTitle}>
-            Vælg de filtre der <br /> passer til dine opskrifter
-          </p>
-        </div>
-        <Filter onApplyFilter={handleApplyFilter} />
+  return (
+    <div className={styles.filterAddContainer}>
+      <div className={styles.filterAddTop}>
+        <button className={styles.backButton} onClick={() => navigate(-1)}>
+          <img src={back} alt="tilbage til opskriftsdetaljer" />
+        </button>
+        <p className={styles.filterAddTitle}>
+          Vælg de filtre der <br /> passer til dine opskrifter
+        </p>
       </div>
-    );
+      <Filter onApplyFilter={handleApplyFilter} />
+    </div>
+  );
 }

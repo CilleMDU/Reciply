@@ -25,7 +25,17 @@
 
   /* Border radius */
   --border-radius: 0.5rem;
-  
+
+  /* Filters */
+  --filter-ziggy: invert(56%) sepia(78%) saturate(542%) hue-rotate(30deg)
+    brightness(100%) contrast(97%);
+  --filter-buzzy: invert(46%) sepia(81%) saturate(366%) hue-rotate(183deg)
+    brightness(82%) contrast(91%);
+  --filter-cherry: invert(21%) sepia(45%) saturate(3726%) hue-rotate(333deg)
+    brightness(92%) contrast(86%);
+  --filter-cripsy: invert(81%) sepia(15%) saturate(5046%) hue-rotate(324deg)
+    brightness(105%) contrast(103%);
+
   /* Mascots */
   --ziggy-img: url("./assets/ziggy.svg");
   --buzzy-img: url("./assets/buzzy.svg");
@@ -34,19 +44,19 @@
 }
 
 .lactoseContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
 }
 
 .topLactose {
-    display: flex;
-    flex-direction: row;
-    align-self: flex-start;
-    justify-content: space-between;
-    width: 26rem;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  justify-content: space-between;
+  width: 26rem;
 }
 
 .lactoseTitle {
@@ -58,28 +68,50 @@
 }
 
 .backButton {
-    background: none;
-    border: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .lactoseTitles {
-    font-family: var(--font-text);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--titles-size);
-    color: var(--text-color);
-    margin-bottom: 0.8rem;
+  font-family: var(--font-text);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--titles-size);
+  color: var(--text-color);
+  margin-bottom: 0.8rem;
 }
 
 .textContainer {
-    display: flex;
-    flex-direction: column;
-    padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
 }
 
 .lactoseText {
-    font-family: var(--font-text);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--text-size);
-    color: var(--text-color);
+  font-family: var(--font-text);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-size);
+  color: var(--text-color);
+}
+
+.backButton img {
+  filter: var(--filter-ziggy);
+}
+
+:global(.chrispyTheme) {
+  .backButton img {
+    filter: var(--filter-cripsy);
+  }
+}
+
+:global(.buzzyTheme) {
+  .backButton img {
+    filter: var(--filter-buzzy);
+  }
+}
+
+:global(.cherryTheme) {
+  .backButton img {
+    filter: var(--filter-cherry);
+  }
 }

@@ -1,3 +1,49 @@
+:root {
+  /* Colors */
+  --background-color: #f2f0e7;
+  --primary-color: #e5dac6;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
+  --text-input-color: #c2b8a7;
+  --text-color: #2c2c2c;
+  --ziggy: #9abc04;
+  --buzzy: #5273ba;
+  --cherry: #b32e40;
+  --crispy: #ffa54b;
+
+  /* Font */
+  --font-rubrik: "betania patmos", serif;
+  --font-text: "istok web", sans-serif;
+
+  /* Font size */
+  --text-size: 1.6rem;
+  --input-size: 1.2rem;
+  --titles-size: 2rem;
+  --optional-size: 0.8rem;
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius: 0.5rem;
+
+  /* Filters */
+  --filter-ziggy: invert(56%) sepia(78%) saturate(542%) hue-rotate(30deg)
+    brightness(100%) contrast(97%);
+  --filter-buzzy: invert(46%) sepia(81%) saturate(366%) hue-rotate(183deg)
+    brightness(82%) contrast(91%);
+  --filter-cherry: invert(21%) sepia(45%) saturate(3726%) hue-rotate(333deg)
+    brightness(92%) contrast(86%);
+  --filter-cripsy: invert(81%) sepia(15%) saturate(5046%) hue-rotate(324deg)
+    brightness(105%) contrast(103%);
+
+  /* Mascots */
+  --ziggy-img: url("./assets/ziggy.svg");
+  --buzzy-img: url("./assets/buzzy.svg");
+  --cherry-img: url("./assets/cherry.svg");
+  --crispy-img: url("./assets/crispy.svg");
+}
+
 .ingredientsContent {
   display: flex;
   flex-direction: column;
@@ -8,13 +54,13 @@
   font-family: "istok web", sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: #2c2c2c;
+  color: var(--text-color);
 }
 
 .ingredientsList {
   font-family: "istok web", sans-serif;
   font-size: 1.2rem;
-  color: #2c2c2c;
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -27,18 +73,18 @@
 
 .ingredientName,
 .ingredientAmount {
-  background-color: #f2f0e7;
+  background-color: var(--background-color);
   min-width: 9.2rem;
   height: auto;
   padding: 1.2rem;
   border-radius: 0.5rem;
-  border: #2c2c2c 1px solid;
+  border: var(--text-color) 1px solid;
 }
 
 .ingredientName::placeholder,
 .ingredientAmount::placeholder {
   font-family: "istok web", sans-serif;
-  color: #c2b8a7;
+  color: var(--text-input-color);
 }
 
 .ingredientName:focus,
@@ -52,9 +98,9 @@
   gap: 0.8rem;
   font-family: "istok web", sans-serif;
   font-size: 1.2rem;
-  color: #2c2c2c;
+  color: var(--text-color);
   flex-basis: 100%;
-  background-color: #f2f0e7;
+  background-color: var(--background-color);
   padding: 1.2rem;
   border-radius: 0.5rem;
 }
@@ -68,6 +114,7 @@
 .deleteIngredient img {
   width: 2.4rem;
   height: auto;
+  filter: var(--filter-ziggy);
 }
 
 .confirmIngredient {
@@ -81,6 +128,7 @@
 .confirmIngredient img {
   width: 3rem;
   height: auto;
+  filter: var(--filter-ziggy);
 }
 
 .confirmIngredient.confirmed {
@@ -97,6 +145,7 @@
 .editIngredient img {
   width: 2rem;
   height: auto;
+  filter: var(--filter-ziggy);
 }
 
 .saveEditIngredient {
@@ -108,6 +157,7 @@
 .saveEditIngredient img {
   width: 2.6rem;
   height: auto;
+  filter: var(--filter-ziggy);
 }
 
 .ingAmountContainer,
@@ -115,12 +165,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f2f0e7;
+  background-color: var(--background-color);
   min-width: 9.2rem;
   height: 1.2rem;
   padding: 1.2rem;
   border-radius: 0.5rem;
-  border: #2c2c2c 1px solid;
+  border: var(--text-color) 1px solid;
 }
 
 .addIngredient {
@@ -129,11 +179,17 @@
   cursor: pointer;
   font-family: "istok web", sans-serif;
   font-size: 1.2rem;
-  color: #2c2c2c;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   gap: 0.8rem;
   justify-content: left;
+}
+
+.addIngredient img {
+  width: 2.6rem;
+  height: auto;
+  filter: var(--filter-ziggy);
 }
 
 .confirmAddIngredient {
@@ -145,4 +201,38 @@
 .confirmAddIngredient img {
   width: 2.6rem;
   height: auto;
+  filter: var(--filter-ziggy);
+}
+
+:global(.crispyTheme) {
+  .confirmIngredient img,
+  .deleteIngredient img,
+  .editIngredient img,
+  .saveEditIngredient img,
+  .confirmAddIngredient img,
+  .addIngredient img {
+    filter: var(--filter-cripsy);
+  }
+}
+
+:global(.buzzyTheme) {
+  .confirmIngredient img,
+  .deleteIngredient img,
+  .editIngredient img,
+  .saveEditIngredient img,
+  .confirmAddIngredient img,
+  .addIngredient img {
+    filter: var(--filter-buzzy);
+  }
+}
+
+:global(.cherryTheme) {
+  .confirmIngredient img,
+  .deleteIngredient img,
+  .editIngredient img,
+  .saveEditIngredient img,
+  .confirmAddIngredient img,
+  .addIngredient img {
+    filter: var(--filter-cherry);
+  }
 }

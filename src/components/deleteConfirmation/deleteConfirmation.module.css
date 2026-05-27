@@ -25,6 +25,12 @@
 
   /* Border radius */
   --border-radius: 0.5rem;
+
+  /* Filters */
+  --filter-ziggy: invert(56%) sepia(78%) saturate(542%) hue-rotate(30deg) brightness(100%) contrast(97%);
+  --filter-buzzy: invert(46%) sepia(81%) saturate(366%) hue-rotate(183deg) brightness(82%) contrast(91%);
+  --filter-cherry: invert(21%) sepia(45%) saturate(3726%) hue-rotate(333deg) brightness(92%) contrast(86%);
+  --filter-cripsy: invert(81%) sepia(15%) saturate(5046%) hue-rotate(324deg) brightness(105%) contrast(103%);
   
   /* Mascots */
   --ziggy-img: url("./assets/ziggy.svg");
@@ -83,4 +89,22 @@
     color: var(--text-color);
     background-color: var(--primary-color);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+:global(.crispyTheme) {
+  .confirmationContainer img {
+    content: url(../../assets/mascots/mascotsSad/sadCrispy.svg);
+  }
+}
+
+:global(.buzzyTheme) {
+  .confirmationContainer img {
+    content: url(../../assets/mascots/mascotsSad/sadBuzzy.svg);
+  }
+}
+
+:global(.cherryTheme) {
+  .confirmationContainer img {
+    content: url(../../assets/mascots/mascotsSad/sadCherry.svg);
+  }
 }

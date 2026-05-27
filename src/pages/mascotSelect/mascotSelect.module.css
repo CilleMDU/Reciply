@@ -43,68 +43,112 @@
   --crispy-img: url("./assets/crispy.svg");
 }
 
-.detailsContainer {
+.mascotContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 4rem;
   max-width: 37.4rem;
 }
 
-.detailsTop {
+.mascotTop {
   display: flex;
+  flex-direction: row;
+  align-self: flex-end;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 22rem;
 }
 
-.opskriftTitle {
+.mascotText {
   font-family: var(--font-text);
-  font-size: var(--titles-size);
   font-weight: var(--font-weight-bold);
+  font-size: var(--titles-size);
   color: var(--text-color);
+  text-align: center;
 }
 
-.backButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  filter: var(--filter-ziggy);
+.exitIcon {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .saveButton {
-  padding: 0.8rem;
-  background-color: var(--primary-color);
-  border-radius: var(--border-radius);
-  border: none;
-  color: var(--text-color);
-  font-size: var(--text-size);
+  background-color: var(--ziggy);
+  color: var(--background-color);
   font-family: var(--font-text);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--titles-size);
+  padding: 1.6rem;
+  border: none;
+  border-radius: var(--border-radius);
   cursor: pointer;
 }
 
-.recipeSection {
+.mascotOptions {
+  display: grid;
+  grid-template-columns: 2fr auto;
+  gap: 3.2rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.mascotButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.crispyImg {
+  width: 11.2rem;
+  height: auto;
+}
+
+.buzzyImg {
+  width: 13.2rem;
+  height: auto;
+}
+
+.cherryImg {
+  width: 16.4rem;
+  height: auto;
+}
+
+.ziggyImg {
+  width: 13.6rem;
+  height: auto;
+}
+
+.btnAndName {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  gap: 4rem;
-  width: 100%;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.mascotName {
+  font-family: var(--font-text);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-size);
+  color: var(--text-color);
 }
 
 :global(.crispyTheme) {
-  .backButton {
-    filter: var(--filter-cripsy);
+  .saveButton {
+    background-color: var(--crispy);
   }
 }
 
 :global(.buzzyTheme) {
-  .backButton {
-    filter: var(--filter-buzzy);
+  .saveButton {
+    background-color: var(--buzzy);
   }
 }
 
 :global(.cherryTheme) {
-  .backButton {
-    filter: var(--filter-cherry);
+  .saveButton {
+    background-color: var(--cherry);
   }
 }

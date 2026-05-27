@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./tips.module.css";
-import backArrow from "../../assets/arrows/backArrowGreen.svg";
+import backArrow from "../../assets/arrows/back.svg";
 import grain from "../../assets/icons/tipsIcons/grain.svg";
 import milk from "../../assets/icons/tipsIcons/milk.svg";
 import nuts from "../../assets/icons/tipsIcons/nut.svg";
@@ -17,7 +17,6 @@ export default function Tips() {
   const handleLactose = () => {
     navigate("/tipsOgTricks/lactose");
   };
-
 
   return (
     <div className={styles.tipsContainer}>
