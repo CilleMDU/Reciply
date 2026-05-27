@@ -4,9 +4,10 @@ import styles from "./loadingScreen.module.css";
 import ziggySpin from "../../assets/lottie/ziggySpin.json";
 import barLoad from "../../assets/lottie/bar.json";
 
-export default function LoadingScreen() {
+export default function LoadingScreen({ progress = 0 }) {
   const ziggyRef = useRef(null);
   const barRef = useRef(null);
+  const barInstanceRef = useRef(null);
 
   useEffect(() => {
     let ziggyInstance;
@@ -32,10 +33,11 @@ export default function LoadingScreen() {
       barInstance = Lottie.loadAnimation({
         container: barRef.current,
         renderer: "svg",
-        loop: true,
-        autoplay: true,
+        loop: false,
+        autoplay: false,
         animationData: barLoad,
       });
+      barInstanceRef.current = barInstance;
     }
     return () => {
       if (barInstance) {
@@ -43,6 +45,14 @@ export default function LoadingScreen() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (barInstanceRef.current) {
+      const totalFrames = barInstanceRef.current.totalFrames;
+      const frameToShow = (progress / 100) * totalFrames;
+      barInstanceRef.current.goToAndStop(frameToShow, true);
+    }
+  }, [progress]);
 
   return (
     <div className={styles.loadingScreen}>

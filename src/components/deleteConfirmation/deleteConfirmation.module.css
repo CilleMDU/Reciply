@@ -1,0 +1,86 @@
+:root {
+  /* Colors */
+  --background-color: #f2f0e7;
+  --primary-color: #e5dac6;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
+  --text-input-color: #c2b8a7;
+  --text-color: #2c2c2c;
+  --ziggy: #9abc04;
+  --buzzy: #5273ba;
+  --cherry: #b32e40;
+  --crispy: #ffa54b;
+
+  /* Font */
+  --font-rubrik: "betania patmos", serif;
+  --font-text: "istok web", sans-serif;
+
+  /* Font size */
+  --text-size: 1.6rem;
+  --input-size: 1.2rem;
+  --titles-size: 2rem;
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius: 0.5rem;
+  
+  /* Mascots */
+  --ziggy-img: url("./assets/ziggy.svg");
+  --buzzy-img: url("./assets/buzzy.svg");
+  --cherry-img: url("./assets/cherry.svg");
+  --crispy-img: url("./assets/crispy.svg");
+}
+
+.confirmationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  max-width: 37.4rem;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 1.6rem;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.confirmationText {
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deleteButton,
+.cancelButton {
+    width: 26rem;
+    height: 4rem;
+    font-size: var(--text-size);
+    font-family: var(--font-text);
+    cursor: pointer;
+    border: var(--text-color) solid 1px;
+}
+
+.deleteButton {
+    color: #ae162a;
+    background-color: var(--background-color);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border-top: none;
+}
+
+.cancelButton {
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
