@@ -4,7 +4,7 @@ import { recipeService } from "../../../services/recipeService";
 import { useNavigate, useParams } from "react-router-dom";
 import LoadingScreen from "../../../components/loadingScreen/loadingScreen";
 import { RecipeContext } from "../../../contexts/recipeContext";
-import backArrow from "../../../assets/arrows/backArrowGreen.svg";
+import backArrow from "../../../assets/arrows/back.svg";
 import Ingrediens from "../../../components/recipe/ingrediens/ingrediens";
 import Steps from "../../../components/recipe/steps/steps";
 import FilterInRecipe from "../../../components/recipe/filterInRecipe/filterInRecipe";

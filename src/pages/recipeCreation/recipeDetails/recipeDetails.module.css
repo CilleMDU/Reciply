@@ -26,6 +26,16 @@
   /* Border radius */
   --border-radius: 0.5rem;
 
+  /* Filters */
+  --filter-ziggy: invert(56%) sepia(78%) saturate(542%) hue-rotate(30deg)
+    brightness(100%) contrast(97%);
+  --filter-buzzy: invert(46%) sepia(81%) saturate(366%) hue-rotate(183deg)
+    brightness(82%) contrast(91%);
+  --filter-cherry: invert(21%) sepia(45%) saturate(3726%) hue-rotate(333deg)
+    brightness(92%) contrast(86%);
+  --filter-cripsy: invert(81%) sepia(15%) saturate(5046%) hue-rotate(324deg)
+    brightness(105%) contrast(103%);
+
   /* Mascots */
   --ziggy-img: url("./assets/ziggy.svg");
   --buzzy-img: url("./assets/buzzy.svg");
@@ -59,6 +69,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  filter: var(--filter-ziggy);
 }
 
 .saveButton {
@@ -78,4 +89,22 @@
   align-items: left;
   gap: 4rem;
   width: 100%;
+}
+
+:global(.crispyTheme) {
+  .backButton {
+    filter: var(--filter-cripsy);
+  }
+}
+
+:global(.buzzyTheme) {
+  .backButton {
+    filter: var(--filter-buzzy);
+  }
+}
+
+:global(.cherryTheme) {
+  .backButton {
+    filter: var(--filter-cherry);
+  }
 }

@@ -25,6 +25,17 @@
 
   /* Border radius */
   --border-radius: 0.5rem;
+
+  /* Filters */
+  --filter-ziggy: invert(56%) sepia(78%) saturate(542%) hue-rotate(30deg)
+    brightness(100%) contrast(97%);
+  --filter-buzzy: invert(46%) sepia(81%) saturate(366%) hue-rotate(183deg)
+    brightness(82%) contrast(91%);
+  --filter-cherry: invert(21%) sepia(45%) saturate(3726%) hue-rotate(333deg)
+    brightness(92%) contrast(86%);
+  --filter-cripsy: invert(81%) sepia(15%) saturate(5046%) hue-rotate(324deg)
+    brightness(105%) contrast(103%);
+
   /* Mascots */
   --ziggy-img: url("./assets/ziggy.svg");
   --buzzy-img: url("./assets/buzzy.svg");
@@ -131,6 +142,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: var(--filter-ziggy);
 }
 
 .filterTop p {
@@ -147,7 +159,7 @@
 }
 
 .clearButton {
-  color: #D80000;
+  color: #d80000;
   border: none;
   background: none;
   font-family: var(--font-text);
@@ -165,4 +177,83 @@
   font-size: var(--text-size);
   cursor: pointer;
   padding: 0.8rem 1.6rem;
+}
+
+
+:global(.crispyTheme) {
+  .applyButton {
+    background-color: var(--crispy);
+  }
+
+  .filterList input[type="checkbox"]:checked + .filterName {
+    background-color: var(--crispy);
+  }
+
+  .categoryList input[type="radio"]:checked + .categoryName {
+    background-color: var(--crispy);
+  }
+
+  .categoryWithFilters {
+    background-color: var(--crispy);
+  }
+
+  .categoryName::after {
+    background-color: var(--crispy);
+  }
+
+  .backButton {
+    filter: var(--filter-cripsy);
+  }
+}
+
+:global(.buzzyTheme) {
+  .applyButton {
+    background-color: var(--buzzy);
+  }
+
+  .filterList input[type="checkbox"]:checked + .filterName {
+    background-color: var(--buzzy);
+  }
+
+  .categoryList input[type="radio"]:checked + .categoryName {
+    background-color: var(--buzzy);
+  }
+
+  .categoryWithFilters {
+    background-color: var(--buzzy);
+  }
+
+  .categoryName::after {
+    background-color: var(--buzzy);
+  }
+
+  .backButton {
+    filter: var(--filter-buzzy);
+  }
+}
+
+:global(.cherryTheme) {
+  .applyButton {
+    background-color: var(--cherry);
+  }
+
+  .filterList input[type="checkbox"]:checked + .filterName {
+    background-color: var(--cherry);
+  }
+
+  .categoryList input[type="radio"]:checked + .categoryName {
+    background-color: var(--cherry);
+  }
+
+  .categoryWithFilters {
+    background-color: var(--cherry);
+  }
+
+  .categoryName::after {
+    background-color: var(--cherry);
+  }
+
+  .backButton {
+    filter: var(--filter-cherry);
+  }
 }

@@ -26,6 +26,16 @@
   /* Border radius */
   --border-radius: 0.5rem;
 
+  /* Filters */
+  --filter-ziggy: invert(56%) sepia(78%) saturate(542%) hue-rotate(30deg)
+    brightness(100%) contrast(97%);
+  --filter-buzzy: invert(46%) sepia(81%) saturate(366%) hue-rotate(183deg)
+    brightness(82%) contrast(91%);
+  --filter-cherry: invert(21%) sepia(45%) saturate(3726%) hue-rotate(333deg)
+    brightness(92%) contrast(86%);
+  --filter-cripsy: invert(81%) sepia(15%) saturate(5046%) hue-rotate(324deg)
+    brightness(105%) contrast(103%);
+
   /* Mascots */
   --ziggy-img: url("./assets/ziggy.svg");
   --buzzy-img: url("./assets/buzzy.svg");
@@ -53,6 +63,12 @@
   font-weight: var(--font-weight-bold);
   font-family: var(--font-text);
   color: var(--text-color);
+}
+
+.exitIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  filter: var(--filter-ziggy);
 }
 
 .nextButton {
@@ -138,11 +154,45 @@
 }
 
 .removeButton {
-  background-color: rgba(99, 99, 99, 0.7);
+  background-color: rgba(41, 41, 41, 0.7);
   border-radius: var(--border-radius);
   border: none;
   position: absolute;
   top: 18.8rem;
-  right: 21.8rem;
+  right: 36.4rem;
   cursor: pointer;
+}
+
+.removeButton img {
+  filter: var(--filter-ziggy);
+}
+
+:global(.crispyTheme) {
+  .exitIcon {
+    filter: var(--filter-cripsy);
+  }
+
+  .removeButton img {
+    filter: var(--filter-cripsy);
+  }
+}
+
+:global(.buzzyTheme) {
+  .exitIcon {
+    filter: var(--filter-buzzy);
+  }
+
+  .removeButton img {
+    filter: var(--filter-buzzy);
+  }
+}
+
+:global(.cherryTheme) {
+  .exitIcon {
+    filter: var(--filter-cherry);
+  }
+
+  .removeButton img {
+    filter: var(--filter-cherry);
+  }
 }

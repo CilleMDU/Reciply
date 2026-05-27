@@ -2,12 +2,26 @@ import Lottie from "lottie-web";
 import { useEffect, useRef } from "react";
 import styles from "./loadingScreen.module.css";
 import ziggySpin from "../../assets/lottie/ziggySpin.json";
+import buzzySpin from "../../assets/lottie/buzzySpin.json";
+import cherrySpin from "../../assets/lottie/cherrySpin.json";
+import crispySpin from "../../assets/lottie/crispySpin.json";
 import barLoad from "../../assets/lottie/bar.json";
+import { useTheme } from "../../hooks/themeHook";
+import logo from "../../assets/logo.svg";
 
 export default function LoadingScreen({ progress = 0 }) {
+  const { crispyTheme, buzzyTheme, cherryTheme } = useTheme();
   const ziggyRef = useRef(null);
   const barRef = useRef(null);
   const barInstanceRef = useRef(null);
+
+  const mascotSpin = crispyTheme
+    ? crispySpin
+    : buzzyTheme
+      ? buzzySpin
+      : cherryTheme
+        ? cherrySpin
+        : ziggySpin;
 
   useEffect(() => {
     let ziggyInstance;
@@ -17,7 +31,7 @@ export default function LoadingScreen({ progress = 0 }) {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        animationData: ziggySpin,
+        animationData: mascotSpin,
       });
     }
     return () => {
@@ -25,7 +39,7 @@ export default function LoadingScreen({ progress = 0 }) {
         ziggyInstance.destroy();
       }
     };
-  }, []);
+  }, [mascotSpin]);
 
   useEffect(() => {
     let barInstance;
@@ -55,9 +69,12 @@ export default function LoadingScreen({ progress = 0 }) {
   }, [progress]);
 
   return (
-    <div className={styles.loadingScreen}>
-      <div ref={ziggyRef} className={styles.animationContainer}></div>
-      <div ref={barRef} className={styles.barContainer}></div>
+    <div className={styles.loadingContainer}>
+      <img src={logo} alt="Reciply Logo" className={styles.logo} />
+      <div className={styles.loadingScreen}>
+        <div ref={ziggyRef} className={styles.animationContainer}></div>
+        <div ref={barRef} className={styles.barContainer}></div>
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import styles from "./recipeDisplay.module.css";
 import { recipeService } from "../../services/recipeService";
 import LoadingScreen from "../../components/loadingScreen/loadingScreen";
-import backArrow from "../../assets/arrows/backArrowGreen.svg";
+import backArrow from "../../assets/arrows/back.svg";
 import ErrorPopUp from "../../components/errorPopUp/errorPopUp";
 import add from "../../assets/icons/addToList.svg";
 import RecipeMenu from "../../components/recipeMenu/recipeMenu";

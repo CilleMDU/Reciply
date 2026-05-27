@@ -1,16 +1,30 @@
-.loadingScreen {
+.loadingContainer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+  background-color: var(--background-color);
+  z-index: 9999;
+}
+
+.logo {
+  display: flex;
+  align-self: center;
+  position: fixed;
+  top: 1.6rem;
+}
+
+.loadingScreen {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6rem;
-  background-color: var(--background-color);
-  z-index: 9999;
 }
 
 .animationContainer {
