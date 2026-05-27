@@ -42,7 +42,7 @@ useEffect(() => {
 
                 {activeTab === "opslag" && (
                     <Opslag
-                        recipes={[]}
+                        recipes={opslagOpskrift}
                     />
                 )}
 
