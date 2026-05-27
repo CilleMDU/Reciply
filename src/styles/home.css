@@ -19,7 +19,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
 }
 
 .logo {
@@ -42,7 +41,7 @@ body {
   display: flex;
   gap: 18px;
   overflow-x: auto;
-  padding: 10px 24px 30px;
+  padding: 16px;
 }
 
 .story img {

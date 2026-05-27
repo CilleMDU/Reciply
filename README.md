@@ -15,9 +15,11 @@ Cecilie Schmidt:
 - ingrediens.jsx (+ ingrediens.module.css)
 - steps.jsx (+ steps.module.css)
 - recipeMenu.jsx (+ recipeMenu.module.css)
-- Alt i context folderen (To context filer og to providers)
+- Alt i context folderen (Tre context filer og tre providers)
+- Alt I hooks (En hook)
 - errorPage.jsx (+ errorPage.module.css)
 - filterAdd.jsx (+ filterAdd.module.css)
+- mascotSelect.jsx (+ mascotSelect.module.css)
 - recipeDetails.jsx (+ recipeDetails.module.css)
 - recipePicture.jsx (+ recipePicture.module.css)
 - recipeDisplay.jsx (+ recipeDisplay.module.css)
@@ -32,8 +34,14 @@ Cecilie Schmidt:
 
 Signe Kjellerup Hove:
 - FeedCard.jsx
+- Gemt.jsx
 - Header.jsx
+- Liked.jsx
+- Opslag.jsx
+- PorfilInfo.jsx
 - Stories.jsx
 - TipBubble.jsx
 - Home.jsx
-- home.css
+- Profil.jsx
+- Home.css
+- Profil.css

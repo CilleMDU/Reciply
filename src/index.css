@@ -55,6 +55,7 @@ body {
   color: var(--text-color);
   width: 390px;
   margin: 0 auto;
+  padding: 1.6rem;
   max-width: 390px;
 }
 
