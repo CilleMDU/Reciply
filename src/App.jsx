@@ -8,6 +8,7 @@ import RecipeEditSecond from "./pages/recipeEdit/recipeDetailsEdit/recipeDetails
 import FilterAdd from "./pages/filterAdd/filterAdd";
 import "./App.css";
 import Home from "./pages/Home";
+import Profil from "./pages/Profil";
 import RecipeDisplay from "./pages/recipeDisplay/recipeDisplay";
 import TipsOgTricks from "./pages/tips/tips";
 import AllergiTips from "./pages/tips/allergiTips";
@@ -18,6 +19,10 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
+        <Route path="/" element={<Feed />} />
+        <Route path="/homepage" element={<Home />} />
+        <Route path="/profilpage" element={<Profil/>}/>
+        <Route path="/createRecipeFirst" element={<RecipeCreationFirst />} />
         <Route path="/" element={<Home />} />
         <Route path="/createRecipe" element={<RecipeCreationFirst />} />
         <Route path="/recipeDetails" element={<RecipeCreationSecond />} />

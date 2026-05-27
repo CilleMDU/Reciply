@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.opslag{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #2C2C2C;
+}
+.profilbillede{
+    clip-path: circle(50px);
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+   
+}
+.lilje{
+    width: 100px;
+    height: auto;
+}
+.profilinfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 36px;
+    
+}
+
+.profilmenu{
+    width: 130px;
+    height: 96px;
+    background-color: #F2F0E7;
+    border-style: solid;
+    border-color: #2C2C2C;
+    color: #2C2C2C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    gap: 6px;
+    border-radius: 5px;
+    position: absolute;
+    left: 270px;
+}
+
+.likedIndhold{
+    width: 378px;
+    height: 254px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #2C2C2C;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.likedFood{
+    width: 126px;
+    height: 126px;
+    border-style: solid;
+    border-color: #2C2C2C;
+    border-radius: 5px;
+    
+}
+
+.profilNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
