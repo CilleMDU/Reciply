@@ -7,6 +7,21 @@ const supabase = createClient(
 
 export const indkobslisteService = {
 
+      async createIndkobsliste(title) {
+        try {
+            const { data, error } = await supabase
+                .from("indkobslister")
+                .insert([{ title }])
+                .select();
+
+
+      if (error) throw error;
+      return data;
+    } catch (error) {
+      console.error("Error creating recipe main:", error);
+      throw error;
+    }
+  },
 
     async fetchIndkobslisteById(id) {
         let recipeIngredienser = []

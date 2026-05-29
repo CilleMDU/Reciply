@@ -15,6 +15,7 @@ import AllergiTips from "./pages/tips/allergiTips";
 import Lactose from "./pages/tips/lactose/lactose";
 import Indkobsliste from "./pages/Indkobsliste";
 import IndkobOversigt from "./pages/IndkobOversigt";
+import IndkobsOpret from "./pages/IndkobsOpret";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/profil" element={<Profil />} />
         <Route path="/indkobOversigt" element={<IndkobOversigt/>} />
         <Route path="/indkobsliste/:listId" element={<Indkobsliste />} />
+        <Route path="/indkobsOpret" element={<IndkobsOpret/>} />
         <Route path="/createRecipeFirst" element={<RecipeCreationFirst />} />
         <Route path="/" element={<Home />} />
         <Route path="/createRecipe" element={<RecipeCreationFirst />} />
