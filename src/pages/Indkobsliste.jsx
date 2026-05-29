@@ -1,24 +1,26 @@
 import { useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { recipeService } from "../services/recipeService";
+import {indkobslisteService } from "../services/indkobslisteService";
 
 export default function Indkobsliste() {
-    const { recipeId } = useParams();
+    const { listId } = useParams();
+    const [ingrediensListe, setIngrediensListe] = useState([]);
 
+    
     
 
       useEffect(() => {
 
-            loadRecipe(recipeId);
+            loadRecipe(listId);
             
         }, []);
 
-        async function loadRecipe(recipeId) {
+        async function loadRecipe(indkobslisteId) {
             try {
-            const recipe = await recipeService.fetchRecipeById(recipeId);
-
-                console.log(recipe);
-                setIngrediensListe(recipe.ingredients)
+                const test = await indkobslisteService.fetchIndkobslisteById(indkobslisteId)
+                console.log(test);
+                setIngrediensListe(test)
 
             } catch (error) {
             console.error("Failed to load recipes:", error);
@@ -26,7 +28,6 @@ export default function Indkobsliste() {
         };
     
 
-    const [ingrediensListe, setIngrediensListe] = useState([]);
 
     function checkboxHandler(index) {
 

@@ -25,7 +25,7 @@ function App() {
         <Route path="/homepage" element={<Home />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/indkobOversigt" element={<IndkobOversigt/>} />
-        <Route path="/indkobsliste/:recipeId" element={<Indkobsliste />} />
+        <Route path="/indkobsliste/:listId" element={<Indkobsliste />} />
         <Route path="/createRecipeFirst" element={<RecipeCreationFirst />} />
         <Route path="/" element={<Home />} />
         <Route path="/createRecipe" element={<RecipeCreationFirst />} />
