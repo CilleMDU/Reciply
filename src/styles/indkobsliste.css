@@ -40,3 +40,62 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
 }
+
+.ingrediensliste{
+    display: flex;
+    flex-direction: row;
+    margin: 16px;
+    justify-content: space-evenly;
+}
+.navn{
+    width: 120px;
+    height: 23px;
+}
+.amount{
+    width: 120px;
+    height: 23px;
+}
+.indkobKnap{
+    width: 16px;
+    height: 16px;
+
+    border-style: solid;
+    border-color: #9ABC04;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #F2F0E7;
+
+    cursor: pointer;
+}
+
+.checked{
+    background: #9ABC04;
+    color: #F2F0E7;
+}
+.tilbage-btn{
+    border: none;
+   background: transparent;
+}
+.gaTilOpskrift{
+    width: 168px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #9ABC04;
+    border-style: none;
+    color: #F2F0E7;
+    padding: 10px;
+    font-size: large;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.fremPil{
+   margin-left: 10px;
+}
+.tilOpskriftKnap{
+    display: flex;
+    justify-content: center;
+}

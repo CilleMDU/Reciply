@@ -1,10 +1,21 @@
+import { useNavigate } from "react-router-dom";
+
+
 export default function IndkobOversigt() {
+
+    const navigate = useNavigate();
+
+    function handleGoToIndkobsliste(id) {
+
+        navigate(`/indkobsliste/${id}`);
+
+    }
     
     return (
         <>
             <header className="header">
                     <button className="plus-btn">
-                        <img src="public/ikoner/plus.svg" alt="plus" />
+                        <img src="/ikoner/plus.svg" alt="plus" />
                     </button>
 
                     <div className="profilNavn">
@@ -12,14 +23,14 @@ export default function IndkobOversigt() {
                     </div>
 
                     <div className="profilMenu">
-                        <img src="public/ikoner/profilMenu.svg" alt="logo" className="profilMenu"
+                        <img src="/ikoner/profilMenu.svg" alt="logo" className="profilMenu"
                         />
                     </div>
             </header>
 
             <main className="indkob_main">
                 <div className="sogfelt">
-                    <img src="public/ikoner/sogActive.svg" alt="sog" />
+                    <img src="/ikoner/sogActive.svg" alt="sog" />
                 </div> 
 
                 <div className="indkobBilledeWrapper">
