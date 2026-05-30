@@ -1,0 +1,181 @@
+:root {
+  /* Colors */
+  --background-color: #f2f0e7;
+  --primary-color: #e5dac6;
+  --primary-color-op: rgba(229, 218, 198, 0.7);
+  --text-input-color: #c2b8a7;
+  --text-color: #2c2c2c;
+  --ziggy: #9abc04;
+  --buzzy: #5273ba;
+  --cherry: #b32e40;
+  --crispy: #ffa54b;
+
+  /* Font */
+  --font-rubrik: "betania patmos", serif;
+  --font-text: "istok web", sans-serif;
+
+  /* Font size */
+  --text-size: 1.6rem;
+  --input-size: 1.2rem;
+  --titles-size: 2rem;
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius: 0.5rem;
+
+  /* Filters */
+  --filter-ziggy: invert(56%) sepia(78%) saturate(542%) hue-rotate(30deg)
+    brightness(100%) contrast(97%);
+  --filter-buzzy: invert(46%) sepia(81%) saturate(366%) hue-rotate(183deg)
+    brightness(82%) contrast(91%);
+  --filter-cherry: invert(21%) sepia(45%) saturate(3726%) hue-rotate(333deg)
+    brightness(92%) contrast(86%);
+  --filter-cripsy: invert(81%) sepia(15%) saturate(5046%) hue-rotate(324deg)
+    brightness(105%) contrast(103%);
+
+  /* Mascots */
+  --ziggy-img: url("../../assets/mascots/ziggy.svg");
+  --buzzy-img: url("../../assets/mascots/buzzy.svg");
+  --cherry-img: url("../../assets/mascots/cherry.svg");
+  --crispy-img: url("../../assets/mascots/crispy.svg");
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.recipeCard img {
+    width: 18em;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.searchResults {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: var(--input-size);
+    border: none;
+    background: none;
+    color: var(--text-color);
+    font-family: var(--font-text);
+    font-size: var(--text-size);
+}
+
+.searchIcon {
+    width: 2.8rem;
+    height: 2.8rem;
+    filter: var(--filter-ziggy);
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.searchInput::placeholder {
+    color: var(--text-input-color);
+}
+
+.searchBar {
+    display: flex;
+    width: 30.8rem;
+    height: 5.2rem;
+    padding: 1.6rem;
+    align-items: center;
+    gap: 1.2rem;
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+.clearButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.clearButton img {
+    width: 3.2rem;
+    height: 3.2rem;
+    filter: var(--filter-ziggy);
+}
+
+.activeFilterBtn {
+    color: var(--background-color);
+    background: var(--ziggy);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.4rem 0.8rem;
+    font-size: var(--text-size);
+    font-family: var(--font-text);
+    cursor: pointer;
+}
+
+.noResults {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+}
+
+.noResultsText {
+    font-size: var(--text-size);
+    color: var(--text-color);
+    font-family: var(--font-text);
+}
+
+:global(.crispyTheme) {
+    .searchIcon {
+        filter: var(--filter-cripsy);
+    }
+
+    .clearButton img {
+        filter: var(--filter-cripsy);
+    }
+
+    .activeFilterBtn {
+        background: var(--crispy);
+    }
+}
+
+:global(.buzzyTheme) {
+    .searchIcon {
+        filter: var(--filter-buzzy);
+    }
+
+    .clearButton img {
+        filter: var(--filter-buzzy);
+    }
+
+    .activeFilterBtn {
+        background: var(--buzzy);
+    }
+}
+
+:global(.cherryTheme) {
+    .searchIcon {
+        filter: var(--filter-cherry);
+    }
+
+    .clearButton img {
+        filter: var(--filter-cherry);
+    }
+
+    .activeFilterBtn {
+        background: var(--cherry);
+    }
+}

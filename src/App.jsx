@@ -14,6 +14,7 @@ import TipsOgTricks from "./pages/tips/tips";
 import AllergiTips from "./pages/tips/allergiTips";
 import Lactose from "./pages/tips/lactose/lactose";
 import Mascots from "./pages/mascotSelect/mascotSelect";
+import Search from "./pages/search/search";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/allergiTips" element={<AllergiTips />} />
         <Route path="/tipsOgTricks/lactose" element={<Lactose />} />
         <Route path="/mascots" element={<Mascots />} />
+        <Route path="/search" element={<Search />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
