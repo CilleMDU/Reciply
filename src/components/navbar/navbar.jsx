@@ -22,7 +22,7 @@ export default function Navbar() {
           <img src={isActive ? tipsAct : tips} alt="tips og tricks" />
         )}
       </NavLink>
-      <NavLink to="/søg" className={styles.navSøg}>
+      <NavLink to="/search" className={styles.navSøg}>
         {({ isActive }) => <img src={isActive ? søgAct : søg} alt="søg" />}
       </NavLink>
       <NavLink to="/indkøbsliste" className={styles.navList}>

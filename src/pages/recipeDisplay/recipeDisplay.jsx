@@ -48,10 +48,10 @@ export default function RecipeDisplay() {
   const handleDelete = async () => {
     try {
       await recipeService.deleteRecipe(recipeId);
-      setShowDeleteConfirmation(false);
       navigate("/");
-    } catch (deleteError) {
-      console.error("Error deleting recipe:", deleteError);
+    } catch (err) {
+      console.error("Error deleting recipe:", err);
+      setError("Failed to delete recipe. Please try again later.");
     }
   };
 
@@ -133,7 +133,7 @@ export default function RecipeDisplay() {
                 >
                   <DeleteConfirmation
                     onCancel={handleCloseConfirmation}
-                    onConfirm={handleDelete}
+                    onDelete={handleDelete}
                   />
                 </div>
               </div>

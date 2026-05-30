@@ -212,6 +212,20 @@ export const recipeService = {
     }
   },
 
+  async deleteRecipe(recipeId) {
+    try {
+      const { error } = await supabase
+        .from("recipes_main")
+        .delete()
+        .eq("id", recipeId);
+
+      if (error) throw error;
+    } catch (error) {
+      console.error("Error deleting recipe:", error);
+      throw error;
+    }
+  },
+
   async createIngredient(recipeId, ingredientData) {
     try {
       const { data, error } = await supabase

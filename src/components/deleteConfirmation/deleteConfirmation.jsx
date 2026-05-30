@@ -1,7 +1,7 @@
 import styles from "./deleteConfirmation.module.css";
 import sadZiggy from "../../assets/mascots/mascotsSad/sadZiggy.svg";
 
-export default function DeleteConfirmation({ onCancel, onConfirm }) {
+export default function DeleteConfirmation({ onCancel, onDelete }) {
   return (
     <div className={styles.confirmationContainer}>
       <p className={styles.confirmationText}>
@@ -19,7 +19,7 @@ export default function DeleteConfirmation({ onCancel, onConfirm }) {
         <button
           type="button"
           className={styles.deleteButton}
-          onClick={onConfirm}
+          onClick={onDelete}
         >
           Slet
         </button>
