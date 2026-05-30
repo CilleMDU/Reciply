@@ -212,3 +212,10 @@
     border-radius: 5px;
     background-color: #9ABC04;
 }
+
+.opretbox{
+   margin-bottom: 20%;
+   margin-top: 20%;
+   display: flex;
+   justify-content: center;
+}

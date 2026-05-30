@@ -16,17 +16,8 @@ export default function IndkobsOpret() {
     const [editName, setEditName] = useState("");
     const [editAmount, setEditAmount] = useState("");
 
-        async function loadtest(indkobslisteId) {
-        try {
-            const test = await indkobslisteService.createIndkobsliste("test")
-            console.log(test);
+    const [title, setTitle] = useState("");
 
-        } catch (error) {
-        console.error("Failed to load recipes:", error);
-        }
-    };
-
-    loadtest("bn")
 
     function addIngredient() {
         if (!ingredientName || !ingredientAmount) return;
@@ -68,6 +59,7 @@ export default function IndkobsOpret() {
         setEditAmount("");
     }
 
+
     return (
         <>
             <header className="header">
@@ -90,6 +82,8 @@ export default function IndkobsOpret() {
                     className="indkobOpretTitle"
                     type="text"
                     placeholder="Title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}    
                 />
                 </div>
 
@@ -182,8 +176,10 @@ export default function IndkobsOpret() {
                     ))}
                 </div>
 
-                <div>
-                    <button className="opretIndkob">
+                <div className="opretbox">
+                    <button className="opretIndkob"
+                    onClick={() => indkobslisteService.createIndkobsliste(title , ingredients)}
+                    >
                         Opret
                     </button>
                 </div>
