@@ -27,7 +27,8 @@ Cecilie Schmidt:
 - tips.jsx
 - allergiTips.jsx
 - tips.module.css
-- Alt i service folderen (To service filer)
+- filterService.js
+- recipeService.js
 - index.css
 
 Signe Kjellerup Hove:
@@ -37,3 +38,13 @@ Signe Kjellerup Hove:
 - TipBubble.jsx
 - Home.jsx
 - home.css
+- indkobslisteService.js
+- indkobsliste.css
+- profil.css
+- styles mappe(home.css , indkobsliste.css , profil.css)
+- opslag.jsx
+- gemt.jsx
+- liked.jsx
+- Profilinfo.jsx
+- Stories.jsx
+- TipBubble.jsx

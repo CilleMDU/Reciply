@@ -47,7 +47,7 @@ export default function IndkobsOpret() {
             setIngredients(ingredients);
 
         } catch (error) {
-            console.error("Failed to load recipes:", error);
+            console.error("fejlede load af recipe", error);
         }
     }
 

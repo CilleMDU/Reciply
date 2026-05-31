@@ -27,7 +27,7 @@ export default function Indkobsliste() {
                 setIndkobListe(data.indkobsListeData[0])
 
             } catch (error) {
-            console.error("Failed to load recipes:", error);
+            console.error("Fejlede load af recipe:", error);
             }
         };
     

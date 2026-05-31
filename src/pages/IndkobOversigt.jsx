@@ -38,7 +38,7 @@ export default function IndkobOversigt() {
             console.log(listsWithImages)
             setIndkobslister(listsWithImages);
         } catch (error) {
-            console.error("Failed to load shopping lists:", error);
+            console.error("fejlede loading af indkobslister:", error);
         }
     }
 
@@ -51,7 +51,7 @@ export default function IndkobOversigt() {
             return data
 
         } catch (error) {
-            console.error("Failed to load recipes:", error);
+            console.error("fejlede loading af recipe:", error);
         }
     }
 
