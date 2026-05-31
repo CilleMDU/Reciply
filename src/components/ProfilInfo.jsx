@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
   
 export default function ProfilInfo({ activeTab, setActiveTab }) { 
     
@@ -15,19 +14,17 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
     navigate("/mascots");
   };
 
+  const [showMenu, setShowMenu] = useState(false);
             
             
-            <header className="header">
-               <button className="plus-btn" onClick={handleGoToCreateRecipe}>
-                    <img src="public/ikoner/plus.svg" alt="plus" />
-                </button>
+
 
   return (
     <div>
-      <header className="header">
-        <button className="plus-btn">
-          <img src="public/ikoner/plus.svg" alt="plus" />
-        </button>
+        <header className="header">
+            <button className="plus-btn" onClick={handleGoToCreateRecipe}>
+                <img src="public/ikoner/plus.svg" alt="plus" />
+            </button>
 
         <div className="profilNavn">
           <h1>lilje.pedersen</h1>
