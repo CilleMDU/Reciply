@@ -7,25 +7,35 @@ const supabase = createClient(
 
 export const indkobslisteService = {
 
-      async createIndkobsliste(title , listOfItems) {
+    async createIndkobsliste(title, listOfItems, recipe_id) {
+        console.log(recipe_id)
+        console.log(listOfItems);
         try {
             const { data, error } = await supabase
                 .from("indkobslister")
-                .insert([{ title }])
+                .insert([{ title , recipe_id}])
                 .select();
             
             const insertData = listOfItems.map((mitTempObjekt) => ({
                 name: mitTempObjekt.name,
                 amount: mitTempObjekt.amount,
+                ingredients_id:mitTempObjekt.ingredients_id,
                 indkobsliste_id: data[0].id,
-                checked : false
-            }))
+                checked: false,
+                ...(mitTempObjekt.recipe_id && {
+                    recipe_id: mitTempObjekt.recipe_id
+                })
+            }));
 
             console.log(insertData)
         
             const { data: creationResponse , error:indkobsError} = await supabase
                 .from("indkobslisteItems")
                 .insert(insertData);
+            
+            
+            console.log(creationResponse)
+            console.log(indkobsError)
             
             if (indkobsError) {
                 console.error("Insert error:", indkobsError);
@@ -41,27 +51,16 @@ export const indkobslisteService = {
   },
 
     async fetchIndkobslisteById(id) {
-        let recipeIngredienser = []
-        let itemIngredienser = []
+        let indkobsListeData = null;
         try {
-            let recipeData = null;
-            const { data: indkobsliste } = await supabase
+            const { data: indkobsListe, error } = await supabase
                 .from("indkobslister")
                 .select("*")
                 .eq("id", id)
-                .single();
             
-            if (indkobsliste.recipe_id) {
-                console.log("here")
-                recipeData = await recipeService.fetchRecipeById(indkobsliste.recipe_id)
-            }
-             console.log(recipeData)
-            recipeIngredienser = recipeData.ingredients
-            
-            //console.log(data)
-        }
-        catch {
-            
+            indkobsListeData = indkobsListe
+        } catch (error) {
+            console.log(error)
         }
 
         try {
@@ -70,29 +69,72 @@ export const indkobslisteService = {
                 .select("*")
                 .eq("indkobsliste_id", id)
             
-            console.log(data)
-            
             const ingredientsIds = data
             .filter(row => row.ingredients_id != null)
                 .map(row => row.ingredients_id);
             
             const noIngrediensItems = data
             .filter(row => row.ingredients_id == null)
-            .map(row => row);
+                .map(row => row);
 
             const { data: ingrediensData } = await supabase
                 .from("ingrediens")
                 .select("*")
                 .in("id", ingredientsIds)
+      
             
-            itemIngredienser = [...ingrediensData , ...noIngrediensItems]
+            const ingredientMap = new Map(
+            ingrediensData.map(i => [i.id, i])
+            );
+            const allItemData = data.map(item => {
+            const ingredient = ingredientMap.get(item.ingredients_id);
+
+            if (!ingredient) return item;
+
+                return {
+                    ...item,
+                    name: ingredient.name,
+                    amount: ingredient.amount,
+                };
+            });
+
+            return {indkobsListeData : indkobsListeData , itemData : allItemData}
+            
             
         } catch (error) {
-            
+            console.log(error)
         }
-        
+    },
 
-        return [...recipeIngredienser , ...itemIngredienser]
+
+    async fetchAllIndkobsLists() {
+        let recipeIngredienser = []
+        let itemIngredienser = []
+        try {
+            let recipeData = null;
+            const { data: indkobslister , error} = await supabase
+                .from("indkobslister")
+                .select("*")
+            
+            return indkobslister
+        }
+        catch(error) {
+            console.log(error)
+        }
+    },
+
+    async updateIndkobsItem(item) {
+        const checked = item.checked
+        try {
+            const { data, error } = await supabase
+                .from("indkobslisteItems")
+                .update({checked})
+                .eq("id", item.id)
+                .select();
+            return data;
+        } catch (error) {
+            console.error(error);
+        }
     }
 
 };

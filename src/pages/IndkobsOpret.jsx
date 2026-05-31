@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import save from "../assets/icons/check.svg"
 import edit from "../assets/icons/edit.svg"
 import slet from "../assets/icons/exit.svg"
-import {indkobslisteService } from "../services/indkobslisteService";
+import { indkobslisteService } from "../services/indkobslisteService";
+import {recipeService} from "../services/recipeService"
+import { useNavigate , useSearchParams} from "react-router-dom";
 
 export default function IndkobsOpret() {
     const [showInputs, setShowInputs] = useState(false);
@@ -17,6 +19,37 @@ export default function IndkobsOpret() {
     const [editAmount, setEditAmount] = useState("");
 
     const [title, setTitle] = useState("");
+
+    const [urlParams, setUrlParams] = useSearchParams();
+    const recipe_id = urlParams.get("recipe_id");
+
+    const navigate = useNavigate()
+
+          useEffect(() => {
+
+              if (recipe_id) {
+                  loadRecipe(recipe_id);
+            }
+            
+        }, []);
+
+    async function loadRecipe(recipe_id) {
+        try {
+            const data = await recipeService.fetchRecipeById(recipe_id);
+
+            const ingredients = data.ingredients.map(ingredient => ({
+                name: ingredient.name,
+                amount: ingredient.amount,
+                ingredients_id: ingredient.id,
+            }));
+
+            console.log(ingredients);
+            setIngredients(ingredients);
+
+        } catch (error) {
+            console.error("Failed to load recipes:", error);
+        }
+    }
 
 
     function addIngredient() {
@@ -39,6 +72,11 @@ export default function IndkobsOpret() {
         setIngredients(ingredients.filter(item => item.id !== id));
     }
 
+    async function handleCreateIndkobsListe(title , ingredients , recipe_id) {
+        await indkobslisteService.createIndkobsliste(title, ingredients, recipe_id)
+        navigate(`/indkobOversigt`)
+    }
+
     function startEdit(ingredient) {
         setEditId(ingredient.id);
         setEditName(ingredient.name);
@@ -59,12 +97,13 @@ export default function IndkobsOpret() {
         setEditAmount("");
     }
 
+    console.log(ingredients)
 
     return (
         <>
             <header className="header">
                 <button className="tilbage-btn">
-                    <img src="/ikoner/tilbage.svg" alt="tilbage" />
+                    <img src="/ikoner/tilbage.svg" alt="tilbage" onClick={() => navigate(`/indkobOversigt`)}/>
                 </button>
 
                 <div className="logo">
@@ -119,7 +158,7 @@ export default function IndkobsOpret() {
                 )}
 
                 <div className="ingredientsList">
-                    {ingredients.map((ingredient) => (
+                    {ingredients.map((ingredient , index) => (
                         <div className="ingredientItem" key={ingredient.id}>
 
                             
@@ -178,7 +217,7 @@ export default function IndkobsOpret() {
 
                 <div className="opretbox">
                     <button className="opretIndkob"
-                    onClick={() => indkobslisteService.createIndkobsliste(title , ingredients)}
+                    onClick={() => handleCreateIndkobsListe(title , ingredients , recipe_id)}
                     >
                         Opret
                     </button>
