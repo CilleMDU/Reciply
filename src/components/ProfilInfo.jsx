@@ -1,14 +1,26 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function ProfilInfo({ activeTab, setActiveTab }) {
-  const navigate = useNavigate();
+  
+export default function ProfilInfo({ activeTab, setActiveTab }) { 
+    
+    const navigate = useNavigate();
+
+    const handleGoToCreateRecipe = () => {
+      navigate("/createRecipe");
+    }
 
   const handleGoToMascots = () => {
     navigate("/mascots");
   };
 
-  const [showMenu, setShowMenu] = useState(false);
+            
+            
+            <header className="header">
+               <button className="plus-btn" onClick={handleGoToCreateRecipe}>
+                    <img src="public/ikoner/plus.svg" alt="plus" />
+                </button>
 
   return (
     <div>

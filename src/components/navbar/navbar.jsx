@@ -25,7 +25,7 @@ export default function Navbar() {
       <NavLink to="/search" className={styles.navSøg}>
         {({ isActive }) => <img src={isActive ? søgAct : søg} alt="søg" />}
       </NavLink>
-      <NavLink to="/indkøbsliste" className={styles.navList}>
+      <NavLink to="/indkobOversigt" className={styles.navList}>
         {({ isActive }) => (
           <img src={isActive ? indkøbAct : indkøb} alt="indkøbsliste" />
         )}

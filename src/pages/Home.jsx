@@ -7,33 +7,60 @@ import { recipeService } from "../services/recipeService";
 
 export default function Home() {
   const [showBubble, setShowBubble] = useState(true);
-  const [testPosts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
 
     loadRecipes();
+    
   }, []);
 
-  async function loadRecipes(){
-  try {
-    const recipes = await recipeService.fetchAllRecipes();
+  async function loadRecipes() {
+    try {
+      const recipes = await recipeService.fetchAllRecipes();
 
-    console.log(recipes);
+      console.log(recipes);
 
-    setPosts(recipes);
-  } catch (error) {
-    console.error("Failed to load recipes:", error);
-  }
-};
-
-
+      mergeFakeUserPostDataWithDatabaseRecipeData(recipes , mockupData);
+    } catch (error) {
+      console.error("Failed to load recipes:", error);
+    }
+  };
   
+  //da vi ikke har nogen brugere i databasen.
+  //har vi lavet noget mockup data med brugere og posts, som vi merge med de recipes vi har fra databasen
+function mergeFakeUserPostDataWithDatabaseRecipeData(databaseRecipes, mockupData) {
 
-  const posts = [
+  const mergedData = mockupData.map((mockItem) => {
+
+    const matchedRecipe = databaseRecipes.find(
+      (recipe) => recipe.id === mockItem.recipeId
+    );
+
+    if (matchedRecipe) {
+
+      const updatedFoodPics = mockItem.foodPics.includes(matchedRecipe.img)
+        ? mockItem.foodPics
+        : [matchedRecipe.img , ...mockItem.foodPics];
+
+      return {
+        ...mockItem,
+        profilComment: matchedRecipe.information,
+        foodPics: updatedFoodPics,
+      };
+    }
+
+    return mockItem;
+  });
+
+  setPosts(mergedData);
+}
+
+  console.log(posts);
+
+  const mockupData = [
     {
       foodPics: [
-    
-        "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://plus.unsplash.com/premium_photo-1700746098867-29b475283b51?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZHVtcGxpbmdzfGVufDB8fDB8fHww",
       ],
       profilPic:
@@ -46,7 +73,6 @@ export default function Home() {
 
     {
       foodPics: [
-        "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=1380&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       profilPic:
         "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -80,17 +106,17 @@ export default function Home() {
       recipeId: 2,
     },
 
-    {
-      foodPics: [
-        "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1381&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      profilPic:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      profilNavn: "larsjensen",
-      profilComment: "Jeg elsker PIZZA",
-      tid: "For 1 dag siden",
-      recipeId: 2,
-    },
+    // {
+    //   foodPics: [
+    //     "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1381&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   ],
+    //   profilPic:
+    //     "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   profilNavn: "larsjensen",
+    //   profilComment: "Jeg elsker PIZZA",
+    //   tid: "For 1 dag siden",
+    //   recipeId: 2,
+    // },
   ];
 
 
