@@ -18,7 +18,6 @@ export default function IndkobOversigt() {
 
             const listsWithImages = await Promise.all(
                 data.map(async (list) => {
-                    console.log(list)
                     if (!list.recipe_id) {
                         return {
                             ...list,

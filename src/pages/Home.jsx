@@ -19,8 +19,6 @@ export default function Home() {
     try {
       const recipes = await recipeService.fetchAllRecipes();
 
-      console.log(recipes);
-
       mergeFakeUserPostDataWithDatabaseRecipeData(recipes , mockupData);
     } catch (error) {
       console.error("Failed to load recipes:", error);
@@ -55,8 +53,6 @@ function mergeFakeUserPostDataWithDatabaseRecipeData(databaseRecipes, mockupData
 
   setPosts(mergedData);
 }
-
-  console.log(posts);
 
   const mockupData = [
     {

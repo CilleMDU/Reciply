@@ -28,9 +28,7 @@ useEffect(() => {
     console.error("Failed to load recipes:", error);
   }
     };
-    console.log(opslagOpskrift)
 
-    
     return (
         <>
             <div> 
