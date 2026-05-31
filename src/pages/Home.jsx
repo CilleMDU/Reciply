@@ -80,8 +80,7 @@ function mergeFakeUserPostDataWithDatabaseRecipeData(databaseRecipes, mockupData
 
     {
       foodPics: [
-        "https://plus.unsplash.com/premium_photo-1673809798970-30c14cfd0ab6?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
+     ],
       profilPic:
         "https://images.unsplash.com/photo-1593757107729-eae8bcc74f8e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       profilNavn: "mathias.bennick",
