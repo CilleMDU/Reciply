@@ -49,10 +49,6 @@ export default function Indkobsliste() {
         }
     }
 
-    console.log(itemsListe)
-    console.log(indkobListe)
-    console.log(indkobListe.recipe_id)
-
     return (
 
         <div className="indkobSIndhold">

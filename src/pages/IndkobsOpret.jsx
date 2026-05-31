@@ -43,7 +43,6 @@ export default function IndkobsOpret() {
                 ingredients_id: ingredient.id,
             }));
 
-            console.log(ingredients);
             setIngredients(ingredients);
 
         } catch (error) {
@@ -96,8 +95,6 @@ export default function IndkobsOpret() {
         setEditName("");
         setEditAmount("");
     }
-
-    console.log(ingredients)
 
     return (
         <>

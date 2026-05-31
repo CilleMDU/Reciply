@@ -34,7 +34,6 @@ export default function IndkobOversigt() {
                 })
             );
 
-            console.log(listsWithImages)
             setIndkobslister(listsWithImages);
         } catch (error) {
             console.error("fejlede loading af indkobslister:", error);

@@ -8,8 +8,7 @@ const supabase = createClient(
 export const indkobslisteService = {
 
     async createIndkobsliste(title, listOfItems, recipe_id) {
-        console.log(recipe_id)
-        console.log(listOfItems);
+
         try {
             const { data, error } = await supabase
                 .from("indkobslister")
@@ -26,16 +25,10 @@ export const indkobslisteService = {
                     recipe_id: mitTempObjekt.recipe_id
                 })
             }));
-
-            console.log(insertData)
         
             const { data: creationResponse , error:indkobsError} = await supabase
                 .from("indkobslisteItems")
                 .insert(insertData);
-            
-            
-            console.log(creationResponse)
-            console.log(indkobsError)
             
             if (indkobsError) {
                 console.error("Insert error:", indkobsError);
