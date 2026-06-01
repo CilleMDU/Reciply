@@ -10,7 +10,7 @@ import RecipeProvider from "./contexts/recipeProvider";
 import FilterProvider from "./contexts/filterProvider";
 import ThemeProvider from "./contexts/themeProvider";
 
-const basename = import.meta.env.DEV ? "/" : "/reciply/";
+const basename = import.meta.env.DEV ? "/" : "/Reciply/";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
