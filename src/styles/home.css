@@ -186,7 +186,7 @@ body {
 .tip-bubble {
   position: fixed;
   bottom: 50px;
-  left: 35%;
+  left: 22%;
 }
 .tip-bubble::after {
   display: none;
