@@ -43,7 +43,7 @@ Signe Kjellerup Hove:
 - TipBubble.jsx
 - Home.jsx
 - home.css
-- indkobslisteService.js
+- indkobslisteService.js (med database opsætning)
 - indkobsliste.css
 - profil.css
 - styles mappe(home.css , indkobsliste.css , profil.css)

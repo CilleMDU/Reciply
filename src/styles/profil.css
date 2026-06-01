@@ -86,4 +86,8 @@
     border-style: solid;
     border-color: #2C2C2C;
 }
+.recipeContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+}
 
