@@ -26,7 +26,6 @@ function App() {
       <Routes>
         
         <Route path="/" element={<Home />} />
-        <Route path="/homepage" element={<Home />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/indkobOversigt" element={<IndkobOversigt/>} />
         <Route path="/indkobsliste/:listId" element={<Indkobsliste />} />

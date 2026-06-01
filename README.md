@@ -25,6 +25,7 @@ Cecilie Schmidt:
 - recipeDisplay.jsx (+ recipeDisplay.module.css)
 - recipeDetailsEdit.jsx (+ recipeDetailsEdit.module.css)
 - recipePictureEdit.jsx (+ recipePictureEdit.module.css)
+- search.jsx (+ search.module.css)
 - lactose.jsx (+ lactose.module.css)
 - tips.jsx
 - allergiTips.jsx
