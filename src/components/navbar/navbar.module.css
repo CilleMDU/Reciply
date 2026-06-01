@@ -55,8 +55,21 @@
   left: 50%;
   transform: translateX(-50%);
   max-width: 390px;
-  width: 390px;
+  width: 100%;
   z-index: 100;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .navbar {
+    padding: 0.4rem;
+  }
 }
 
 .navbar img {

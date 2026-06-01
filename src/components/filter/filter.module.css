@@ -85,6 +85,25 @@
   font-size: var(--text-size);
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .filterName,
+  .categoryName {
+    width: 11.5rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .filterName,
+  .categoryName {
+    width: 10rem;
+    height: 3.2rem;
+    font-size: 1.2rem;
+  }
+}
+
 .filterList input[type="checkbox"]:checked + .filterName {
   background-color: var(--ziggy);
   color: var(--background-color);

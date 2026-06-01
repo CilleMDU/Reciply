@@ -52,6 +52,35 @@
   max-width: 37.4rem;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .filterAddContainer {
+    max-width: 100%;
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+
+  .filterAddTop {
+    height: 3.5rem;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .filterAddContainer {
+    max-width: 95%;
+    gap: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .filterAddTop {
+    height: 3.2rem;
+    gap: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
 .filterAddTop {
   display: flex;
   align-items: center;

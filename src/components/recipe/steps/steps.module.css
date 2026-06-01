@@ -71,6 +71,52 @@
   gap: 0.8rem;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .stepInputs {
+    gap: 0.6rem;
+  }
+
+  .stepContainer {
+    min-width: 8rem;
+    padding: 1rem;
+  }
+
+  .stepsList {
+    gap: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .stepInputs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stepContainer {
+    min-width: 100%;
+    padding: 0.8rem;
+  }
+
+  .stepsList {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .stepsItem {
+    font-size: 1rem;
+  }
+}
+
 .stepsItem {
   display: flex;
   align-items: flex-start;
