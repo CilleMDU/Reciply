@@ -53,6 +53,34 @@
   right: 38rem;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .menuContainer {
+    right: 1rem;
+  }
+
+  .menuEdit,
+  .menuDelete {
+    width: 11rem;
+    padding: 0.7rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .menuContainer {
+    right: 0.5rem;
+    top: 4.2rem;
+  }
+
+  .menuEdit,
+  .menuDelete {
+    width: 10rem;
+    padding: 0.6rem;
+    font-size: 1.2rem;
+  }
+}
+
 .menuEdit {
   background-color: var(--primary-color);
   width: 13.2rem;

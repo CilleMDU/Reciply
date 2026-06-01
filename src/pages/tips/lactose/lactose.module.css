@@ -51,6 +51,61 @@
   gap: 4rem;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .lactoseContainer {
+    gap: 3rem;
+  }
+
+  .topLactose {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .lactoseTitle {
+    font-size: 1.8rem;
+  }
+
+  .lactoseTitles {
+    font-size: 1.8rem;
+  }
+
+  .lactoseText {
+    font-size: 1.5rem;
+  }
+
+  .textContainer {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .lactoseContainer {
+    gap: 2rem;
+  }
+
+  .topLactose {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+
+  .lactoseTitle {
+    font-size: 1.6rem;
+  }
+
+  .lactoseTitles {
+    font-size: 1.6rem;
+  }
+
+  .lactoseText {
+    font-size: 1.3rem;
+  }
+
+  .textContainer {
+    padding: 1rem;
+  }
+}
+
 .topLactose {
   display: flex;
   flex-direction: row;

@@ -51,6 +51,53 @@
   max-width: 37.4rem;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .detailsContainer {
+    max-width: 100%;
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+
+  .detailsTop {
+    gap: 1rem;
+  }
+
+  .opskriftTitle {
+    font-size: 1.8rem;
+  }
+
+  .saveButton {
+    padding: 0.6rem;
+    font-size: 1.5rem;
+  }
+
+  .recipeSection {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .detailsContainer {
+    max-width: 95%;
+    gap: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .opskriftTitle {
+    font-size: 1.6rem;
+  }
+
+  .saveButton {
+    padding: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .recipeSection {
+    gap: 2rem;
+  }
+}
+
 .detailsTop {
   display: flex;
   align-items: center;

@@ -35,3 +35,38 @@
   width: 30rem;
   margin-top: 4rem;
 }
+
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .animationContainer {
+    width: 28rem;
+  }
+
+  .barContainer {
+    width: 24rem;
+    margin-top: 3rem;
+  }
+
+  .loadingScreen {
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .animationContainer {
+    width: 22rem;
+  }
+
+  .barContainer {
+    width: 19rem;
+    margin-top: 2rem;
+  }
+
+  .loadingScreen {
+    gap: 4rem;
+  }
+
+  .logo {
+    top: 1.2rem;
+  }
+}

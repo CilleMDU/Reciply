@@ -79,6 +79,51 @@
   border: var(--text-color) 1px solid;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .filterTags {
+    gap: 0.6rem;
+  }
+
+  .filterTag {
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .editFiltersButton {
+    gap: 0.6rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .filterTags {
+    gap: 0.5rem;
+  }
+
+  .filterTag {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .editFiltersButton {
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .noFilters {
+    font-size: 1rem;
+  }
+}
+
 .noFilters {
   font-family: "istok web", sans-serif;
   font-size: 1.2rem;

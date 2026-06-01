@@ -97,6 +97,45 @@
   margin-top: 1rem;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .errorModal {
+    max-width: 90%;
+    width: 90%;
+    padding: 1.2rem;
+    gap: 1.5rem;
+  }
+
+  .retry {
+    width: 90%;
+    padding: 6px 30px;
+    font-size: 1.5rem;
+  }
+
+  .errorTop {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .errorModal {
+    max-width: 85%;
+    width: 85%;
+    padding: 1rem;
+    gap: 1.2rem;
+  }
+
+  .retry {
+    width: 85%;
+    padding: 5px 20px;
+    font-size: 1.3rem;
+  }
+
+  .errorTop {
+    font-size: 1.6rem;
+  }
+}
+
 .undo {
   background-color: #f99ca8;
   width: 20.5rem;

@@ -9,8 +9,8 @@
     display: flex;
     align-items: center;
     margin-top: 20px;
-    
 }
+
 .indkob_main{
     display: flex;
     justify-content: center;
@@ -18,20 +18,20 @@
     gap: 60px;
     align-items: center;
 }
+
 .enkelListe{
     display: flex;
     width: 126px;
     height: auto;
     flex-direction: column;
     text-align: center;
-
 }
-
 
 .indkobFood{
      width: 126px;
      height: 126px;
 }
+
 .indkobBilledeWrapper{
     display: flex;
     flex-direction: row;
@@ -47,28 +47,27 @@
     margin: 16px;
     justify-content: space-evenly;
 }
+
 .navn{
     width: 120px;
     height: 23px;
 }
+
 .amount{
     width: 120px;
     height: 23px;
 }
+
 .indkobKnap{
     width: 16px;
     height: 16px;
-
     border-style: solid;
     border-color: #9ABC04;
     border-radius: 5px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #F2F0E7;
-
     cursor: pointer;
 }
 
@@ -76,10 +75,12 @@
     background: #9ABC04;
     color: #F2F0E7;
 }
+
 .tilbage-btn{
     border: none;
-   background: transparent;
+    background: transparent;
 }
+
 .gaTilOpskrift{
     width: 168px;
     height: 45px;
@@ -92,9 +93,11 @@
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
 .fremPil{
    margin-left: 10px;
 }
+
 .tilOpskriftKnap{
     display: flex;
     justify-content: center;
@@ -111,9 +114,11 @@
     border-radius: 5px;
     padding: 8px;
 }
+
 .indkobOpretTitle::placeholder{
     color: #C2B8A7;
 }
+
 .indkobOpretTitleBox{
     display: flex;
     justify-content: center;
@@ -147,6 +152,147 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .sogfelt {
+    width: 100%;
+    height: 48px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 15px;
+  }
+
+  .indkob_main {
+    gap: 40px;
+  }
+
+  .indkobBilledeWrapper {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .indkobFood {
+    width: 100px;
+    height: 100px;
+  }
+
+  .enkelListe {
+    width: 100px;
+  }
+
+  .ingrediensliste {
+    margin: 12px;
+    gap: 10px;
+  }
+
+  .navn, .amount {
+    width: 100px;
+    height: 20px;
+    font-size: 0.9rem;
+  }
+
+  .gaTilOpskrift {
+    width: 140px;
+    height: 40px;
+    padding: 8px;
+    font-size: medium;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .indkobOpretTitle {
+    width: 200px;
+    height: 42px;
+    padding: 6px;
+  }
+
+  .indkobOpretTitleBox {
+    margin: 30px;
+  }
+
+  .ingredientInputs {
+    gap: 0.6rem;
+  }
+
+  .ingredientName,
+  .ingredientAmount {
+    min-width: 8rem;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .sogfelt {
+    width: 95%;
+    height: 44px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .indkob_main {
+    gap: 30px;
+  }
+
+  .indkobBilledeWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .indkobFood {
+    width: 85px;
+    height: 85px;
+  }
+
+  .enkelListe {
+    width: 85px;
+  }
+
+  .ingrediensliste {
+    flex-direction: column;
+    margin: 10px;
+    gap: 8px;
+  }
+
+  .navn, .amount {
+    width: 90%;
+    height: 18px;
+    font-size: 0.8rem;
+  }
+
+  .gaTilOpskrift {
+    width: 120px;
+    height: 36px;
+    padding: 6px;
+    font-size: small;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .indkobOpretTitle {
+    width: 90%;
+    height: 38px;
+    padding: 5px;
+    font-size: 0.9rem;
+  }
+
+  .indkobOpretTitleBox {
+    margin: 20px 10px;
+  }
+
+  .ingredientInputs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ingredientName,
+  .ingredientAmount {
+    min-width: 100%;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
 }
 
 .ingredientsList{

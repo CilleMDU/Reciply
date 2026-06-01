@@ -81,6 +81,49 @@
   border: var(--text-color) 1px solid;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .ingredientInputs {
+    gap: 0.6rem;
+  }
+
+  .ingredientName,
+  .ingredientAmount {
+    min-width: 8rem;
+    padding: 1rem;
+  }
+
+  .ingredientsList {
+    gap: 1.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .ingredientInputs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ingredientName,
+  .ingredientAmount {
+    min-width: 100%;
+    padding: 0.8rem;
+  }
+
+  .ingredientsList {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+}
+
 .ingredientName::placeholder,
 .ingredientAmount::placeholder {
   font-family: "istok web", sans-serif;

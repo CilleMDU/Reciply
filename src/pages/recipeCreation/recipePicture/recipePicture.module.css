@@ -58,6 +58,74 @@
   width: 37.4rem;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .recipeTopFirst {
+    width: 100%;
+  }
+
+  .recipeTitle input {
+    width: 100%;
+    height: 4.4rem;
+    font-size: 1.8rem;
+  }
+
+  .recipeDescription textarea {
+    width: 100%;
+    min-height: 5rem;
+    font-size: 1.4rem;
+  }
+
+  .addPicture {
+    width: 100%;
+    height: 25rem;
+    font-size: 4rem;
+  }
+
+  .previewImage {
+    width: 100%;
+    height: 25rem;
+  }
+
+  .recipeUpload {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .recipeTitle input {
+    width: 95%;
+    height: 4rem;
+    font-size: 1.6rem;
+  }
+
+  .recipeDescription textarea {
+    width: 95%;
+    min-height: 4rem;
+    font-size: 1.2rem;
+  }
+
+  .addPicture {
+    width: 95%;
+    height: 20rem;
+    font-size: 3rem;
+  }
+
+  .previewImage {
+    width: 95%;
+    height: 20rem;
+  }
+
+  .nextButton {
+    padding: 0.6rem;
+    font-size: 1.4rem;
+  }
+
+  .recipeUpload {
+    gap: 2rem;
+  }
+}
+
 .opslagNyt {
   font-size: var(--titles-size);
   font-weight: var(--font-weight-bold);
