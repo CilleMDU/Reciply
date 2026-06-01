@@ -146,7 +146,7 @@ export default function RecipePictureEdit() {
                 className={styles.exitIcon}
                 onClick={handleExit}
               />
-              <p className={styles.opslagNyt}>Nyt opslag</p>
+              <p className={styles.opslagNyt}>Rediger opslag</p>
               <button onClick={handleNext} className={styles.nextButton}>
                 Næste
               </button>

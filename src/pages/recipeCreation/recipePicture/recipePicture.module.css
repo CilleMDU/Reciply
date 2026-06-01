@@ -220,8 +220,8 @@
   border-radius: var(--border-radius);
   border: none;
   position: absolute;
-  top: 18.8rem;
-  right: 36.4rem;
+  top: 28%;
+  right: 6%;
   cursor: pointer;
 }
 
