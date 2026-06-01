@@ -200,6 +200,7 @@
 
 
 :global(.crispyTheme) {
+
   .applyButton {
     background-color: var(--crispy);
   }

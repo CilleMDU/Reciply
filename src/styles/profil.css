@@ -4,7 +4,12 @@
   box-sizing: border-box;
 }
 
-
+.profilNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 10%;
+}
 .opslag{
   display: flex;
   justify-content: center;

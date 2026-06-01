@@ -95,3 +95,19 @@ html {
     font-size: 50%;
   }
 }
+
+.ikonerFarveChange {
+  filter: var(--filter-ziggy);
+}
+
+.crispyTheme .ikonerFarveChange {
+  filter: var(--filter-crispy);
+}
+
+.buzzyTheme .ikonerFarveChange {
+  filter: var(--filter-buzzy);
+}
+
+.cherryTheme .ikonerFarveChange {
+  filter: var(--filter-cherry);
+}

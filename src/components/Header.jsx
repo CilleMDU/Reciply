@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="header">
       <button className="plus-btn" onClick={handleGoToCreateRecipe}>
-        <img src={plus} alt="plus" />
+        <img className="ikonerFarveChange" src={plus} alt="plus" />
       </button>
 
       <div className="logo">

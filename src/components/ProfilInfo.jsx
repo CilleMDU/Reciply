@@ -89,7 +89,7 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
           onClick={() => setActiveTab("liked")}
         />
 
-        <img
+        <img className="ikonerFarveChange"
           src={
             activeTab === "gemt"
               ? profilGemOpskriftActiveIcon

@@ -25,7 +25,7 @@ export default function FeedCard({ profilPic, foodPics, profilNavn, profilCommen
   return (
     <div className="feed-card">
       <div className="feed-header">
-               <img
+               <img 
           src = { profilPic }
           
           alt="profile"
@@ -62,7 +62,7 @@ export default function FeedCard({ profilPic, foodPics, profilNavn, profilCommen
       <div className="feed-actions">
         <div className="left-actions">
           <div className="icon-box">
-            <img src={heartInactive} alt="heart" />
+            <img className="ikonerFarveChange" src={heartInactive} alt="heart" />
             <span>10</span>
           </div>
 
