@@ -1,4 +1,9 @@
 import { useNavigate } from "react-router";
+import heartInactive from "../assets/icons/heartInactive.svg";
+import comment from "../assets/icons/comment.svg";
+import reshare from "../assets/icons/reshare.svg";
+import gemOpskriftInactive from "../assets/icons/gemOpskriftInactive.svg";
+
 
 export default function FeedCard({ profilPic, foodPics, profilNavn, profilComment, tid, recipeId, }) {
 
@@ -57,19 +62,19 @@ export default function FeedCard({ profilPic, foodPics, profilNavn, profilCommen
       <div className="feed-actions">
         <div className="left-actions">
           <div className="icon-box">
-            <img src="public/ikoner/heartInactive.svg" alt="heart" />
+            <img src={heartInactive} alt="heart" />
             <span>10</span>
           </div>
 
           <div className="icon-box">
-            <img src="public/ikoner/comment.svg" alt="comment" />
+            <img src={comment} alt="comment" />
           </div>
             <div>
-               <img src="public/ikoner/reshare.svg" alt="reshare"/>       
+               <img src={reshare} alt="reshare"/>       
             </div>
         </div>
 
-        <img src="public/ikoner/gemOpskriftInactive.svg" alt="bookmark" />
+        <img src={gemOpskriftInactive} alt="bookmark" />
       </div>
 
       <div className="feed-text">

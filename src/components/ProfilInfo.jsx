@@ -1,5 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import plusIcon from "../assets/icons/plus.svg";
+import profilMenuIcon from "../assets/icons/profilMenu.svg";
+import opslagActiveIcon from "../assets/icons/opslagActive.svg"
+import opslagInactiveIcon from "../assets/icons/opslagInactive.svg"
+import profilHeartActiveIcon from "../assets/icons/heartActive.svg"
+import profilHeartInactiveIcon from "../assets/icons/heartInactive.svg"
+import profilGemOpskriftActiveIcon from "../assets/icons/profilGemOpskriftActive.svg"
+import profilGemOpskriftInactiveIcon from "../assets/icons/profilGemOpskriftInactive.svg"
   
 export default function ProfilInfo({ activeTab, setActiveTab }) { 
     
@@ -22,7 +30,7 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
     <div>
         <header className="header">
             <button className="plus-btn" onClick={handleGoToCreateRecipe}>
-                <img src="public/ikoner/plus.svg" alt="plus" />
+                <img src={plusIcon} alt="plus" />
             </button>
 
         <div className="profilNavn">
@@ -31,7 +39,7 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
 
         <div className="profilMenu">
           <img
-            src="public/ikoner/profilMenu.svg"
+            src={profilMenuIcon}
             alt="logo"
             className="profilMenu"
             onClick={() => setShowMenu(!showMenu)}
@@ -64,8 +72,8 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
         <img
           src={
             activeTab === "opslag"
-              ? "/ikoner/opslagActive.svg"
-              : "/ikoner/opslagInactive.svg"
+              ? opslagActiveIcon
+              : opslagInactiveIcon
           }
           alt="profilOpslag"
           onClick={() => setActiveTab("opslag")}
@@ -74,8 +82,8 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
         <img
           src={
             activeTab === "liked"
-              ? "/ikoner/profilHeartActive.svg"
-              : "/ikoner/profilHeartInactive.svg"
+              ? profilHeartActiveIcon
+              : profilHeartInactiveIcon
           }
           alt="profilHeart"
           onClick={() => setActiveTab("liked")}
@@ -84,8 +92,8 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
         <img
           src={
             activeTab === "gemt"
-              ? "/ikoner/profilGemOpskriftActive.svg"
-              : "/ikoner/profilGemOpskriftInactive.svg"
+              ? profilGemOpskriftActiveIcon
+              : profilGemOpskriftInactiveIcon
           }
           alt="profilOpskrift"
           onClick={() => setActiveTab("gemt")}
