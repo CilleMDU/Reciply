@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import plus from "../assets/icons/plus.svg";
+import logo from "../assets/icons/logo.svg";
 
 export default function Header() {
       const navigate = useNavigate();
@@ -10,11 +12,11 @@ export default function Header() {
   return (
     <header className="header">
       <button className="plus-btn" onClick={handleGoToCreateRecipe}>
-        <img src="public/ikoner/plus.svg" alt="plus" />
+        <img src={plus} alt="plus" />
       </button>
 
       <div className="logo">
-        <img src="public/ikoner/logo.svg" alt="logo"/>
+        <img src={logo} alt="logo"/>
       </div>
 
       <div className="ziggy-ikon">

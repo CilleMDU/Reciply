@@ -2,6 +2,9 @@ import { useState , useEffect } from "react";
 import save from "../assets/icons/check.svg"
 import edit from "../assets/icons/edit.svg"
 import slet from "../assets/icons/exit.svg"
+import tilbageIcon from "../assets/icons/tilbage.svg"
+import skrallespan from "../assets/icons/skrallespan.svg"
+import plus from "../assets/icons/plus.svg"
 import { indkobslisteService } from "../services/indkobslisteService";
 import {recipeService} from "../services/recipeService"
 import { useNavigate , useSearchParams} from "react-router-dom";
@@ -100,7 +103,7 @@ export default function IndkobsOpret() {
         <>
             <header className="header">
                 <button className="tilbage-btn">
-                    <img src="/ikoner/tilbage.svg" alt="tilbage" onClick={() => navigate(`/indkobOversigt`)}/>
+                    <img src={tilbageIcon} alt="tilbage" onClick={() => navigate(`/indkobOversigt`)}/>
                 </button>
 
                 <div className="logo">
@@ -108,7 +111,7 @@ export default function IndkobsOpret() {
                 </div>
 
                 <div className="skrallespan">
-                    <img src="/ikoner/skrallespan.svg" alt="skrallespan" />
+                    <img src={skrallespan} alt="skrallespan" />
                 </div>
             </header>
 
@@ -127,7 +130,7 @@ export default function IndkobsOpret() {
                     className="addIngredient"
                     onClick={() => setShowInputs(true)}
                 >
-                    <img src="/ikoner/plus.svg" alt="plus" /> Tilføj ingrediens
+                    <img src={plus} alt="plus" /> Tilføj ingrediens
                 </button>
 
                 {showInputs && (

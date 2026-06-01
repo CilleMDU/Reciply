@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { indkobslisteService } from "../services/indkobslisteService";
-import {recipeService} from "../services/recipeService"
+import { recipeService } from "../services/recipeService"
+import profilMenuIcon from "../assets/icons/profilMenu.svg"
+import plusIcon from "../assets/icons/plus.svg"
+import sogActiveIcon from "../assets/icons/sogActive.svg"
+
 
 export default function IndkobOversigt() {
     const navigate = useNavigate();
@@ -62,7 +66,7 @@ export default function IndkobOversigt() {
             <header className="header">
                 <button className="plus-btn">
                     <img
-                        src="/ikoner/plus.svg"
+                        src={plusIcon}
                         alt="plus"
                         onClick={() => navigate("/indkobsOpret")}
                     />
@@ -74,7 +78,7 @@ export default function IndkobOversigt() {
 
                 <div className="profilMenu">
                     <img
-                        src="/ikoner/profilMenu.svg"
+                        src={profilMenuIcon}
                         alt="logo"
                         className="profilMenu"
                     />
@@ -83,7 +87,7 @@ export default function IndkobOversigt() {
 
             <main className="indkob_main">
                 <div className="sogfelt">
-                    <img src="/ikoner/sogActive.svg" alt="sog" />
+                    <img src={sogActiveIcon} alt="sog" />
                 </div>
 
                 <div className="indkobBilledeWrapper">
