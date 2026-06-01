@@ -49,11 +49,12 @@ body {
   height: 78px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .feed-card {
   padding: 0 24px;
-  }
+}
 
 .feed-header {
   display: flex;
@@ -82,6 +83,7 @@ body {
   gap: 8px;
   margin: 16px 0;
 }
+
 .dots span {
   width: 10px;
   height: 10px;
@@ -92,12 +94,68 @@ body {
 .dots .active {
   background: #2C2C2C;
 }
- .visible {
+
+.visible {
   visibility: visible;
 }
 
 .hidden {
   visibility: hidden;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .stories {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .story img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .feed-card {
+    padding: 0 16px;
+  }
+
+  .feed-header {
+    gap: 10px;
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .food-image {
+    height: 500px;
+  }
+}
+
+@media (max-width: 320px) {
+  .stories {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .story img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .feed-card {
+    padding: 0 12px;
+  }
+
+  .profile-pic {
+    width: 36px;
+    height: 36px;
+  }
+
+  .food-image {
+    height: 400px;
+  }
 }
 
 .feed-actions {

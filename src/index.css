@@ -53,14 +53,45 @@ body {
   background-color: var(--background-color);
   font-family: var(--font-text);
   color: var(--text-color);
-  width: 390px;
+  width: 100%;
+  max-width: 390px;
   margin: 0 auto;
   padding: 1.6rem;
-  max-width: 390px;
 }
 
 /* rem 10px=1rem */
 html {
   font-size: 62.5%;
- 
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 390px) {
+  body {
+    width: 100%;
+    padding: 1.2rem;
+  }
+  
+  html {
+    font-size: 56.25%; /* Reduces base font size to 9px */
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 1rem;
+  }
+  
+  html {
+    font-size: 50%; /* Reduces base font size to 8px */
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    padding: 0.8rem;
+  }
+  
+  html {
+    font-size: 50%;
+  }
 }

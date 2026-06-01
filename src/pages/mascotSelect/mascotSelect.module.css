@@ -52,6 +52,68 @@
   max-width: 37.4rem;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .mascotContainer {
+    max-width: 100%;
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+
+  .mascotTop {
+    width: 100%;
+  }
+
+  .mascotText {
+    font-size: 1.8rem;
+  }
+
+  .exitIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .saveButton {
+    padding: 1.4rem;
+    font-size: 1.8rem;
+  }
+
+  .mascotOptions {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .mascotContainer {
+    max-width: 95%;
+    gap: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .mascotTop {
+    width: 100%;
+  }
+
+  .mascotText {
+    font-size: 1.6rem;
+  }
+
+  .exitIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .saveButton {
+    padding: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .mascotOptions {
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+  }
+}
+
 .mascotTop {
   display: flex;
   flex-direction: row;

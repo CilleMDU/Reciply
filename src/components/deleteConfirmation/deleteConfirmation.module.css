@@ -78,6 +78,46 @@
     border: var(--text-color) solid 1px;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 360px) {
+  .confirmationContainer {
+    max-width: 90%;
+    gap: 3rem;
+    padding: 1.2rem;
+  }
+
+  .deleteButton,
+  .cancelButton {
+    width: 100%;
+    height: 3.5rem;
+    font-size: 1.5rem;
+  }
+
+  .confirmationText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .confirmationContainer {
+    max-width: 85%;
+    gap: 2rem;
+    padding: 1rem;
+    top: 40%;
+  }
+
+  .deleteButton,
+  .cancelButton {
+    width: 100%;
+    height: 3.2rem;
+    font-size: 1.3rem;
+  }
+
+  .confirmationText {
+    font-size: 1.3rem;
+  }
+}
+
 .deleteButton {
     color: #ae162a;
     background-color: var(--background-color);
