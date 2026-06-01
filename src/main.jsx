@@ -10,9 +10,11 @@ import RecipeProvider from "./contexts/recipeProvider";
 import FilterProvider from "./contexts/filterProvider";
 import ThemeProvider from "./contexts/themeProvider";
 
+const basename = import.meta.env.DEV ? "/" : "/reciply/";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <ThemeProvider>
       <RecipeProvider>
         <FilterProvider>

@@ -6,6 +6,6 @@ import pkg from "./package.json";
 export default defineConfig(({ command }) => {
   return {
     plugins: [react()],
-    base: "/",
+    base: command === "build" ? pkg.base : "/",
   };
 });
