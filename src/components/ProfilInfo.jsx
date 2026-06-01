@@ -4,8 +4,8 @@ import plusIcon from "../assets/icons/plus.svg";
 import profilMenuIcon from "../assets/icons/profilMenu.svg";
 import opslagActiveIcon from "../assets/icons/opslagActive.svg"
 import opslagInactiveIcon from "../assets/icons/opslagInactive.svg"
-import profilHeartActiveIcon from "../assets/icons/heartActive.svg"
-import profilHeartInactiveIcon from "../assets/icons/heartInactive.svg"
+import profilHeartActiveIcon from "../assets/icons/profilHeartActive.svg"
+import profilHeartInactiveIcon from "../assets/icons/profilHeartInactive.svg"
 import profilGemOpskriftActiveIcon from "../assets/icons/profilGemOpskriftActive.svg"
 import profilGemOpskriftInactiveIcon from "../assets/icons/profilGemOpskriftInactive.svg"
   

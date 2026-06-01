@@ -2,7 +2,10 @@ import { useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate} from "react-router-dom";
 import { recipeService } from "../services/recipeService";
-import {indkobslisteService } from "../services/indkobslisteService";
+import { indkobslisteService } from "../services/indkobslisteService";
+import tilbage from "../assets/icons/tilbage.svg";
+import skrallespan from "../assets/icons/skrallespan.svg"
+import frem from "../assets/icons/frem.svg"
 
 export default function Indkobsliste() {
     const { listId } = useParams();
@@ -55,7 +58,7 @@ export default function Indkobsliste() {
 
             <header className="header">
       <button className="tilbage-btn">
-        <img src="/ikoner/tilbage.svg" alt="tilbage" onClick={() => navigate(`/indkobOversigt`)}/>
+        <img src={tilbage} alt="tilbage" onClick={() => navigate(`/indkobOversigt`)}/>
       </button>
 
       <div className="logo">
@@ -63,7 +66,7 @@ export default function Indkobsliste() {
       </div>
 
       <div className="skrallespan">
-        <img src="/ikoner/skrallespan.svg" alt="skrallespan" className="skrallespan" />
+        <img src={skrallespan} alt="skrallespan" className="skrallespan" />
       </div>
     </header>
 
@@ -105,7 +108,7 @@ export default function Indkobsliste() {
                             onClick={() => navigate(`/recipe/${indkobListe.recipe_id}`)}
                         >
                             Gå til opskrift
-                            <img className="fremPil" src="/ikoner/frem.svg" alt="frem" />
+                            <img className="fremPil" src={frem} alt="frem" />
                         </button>
                     </div>
                 )}
