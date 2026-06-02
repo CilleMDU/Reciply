@@ -1,7 +1,24 @@
 import { useNavigate } from "react-router";
+import { useTheme } from "../hooks/themeHook";
+import logo from "../assets/icons/logo.svg";
+import ziggy from "../assets/mascots/ziggy.svg";
+import buzzy from "../assets/mascots/buzzy.svg";
+import cherry from "../assets/mascots/cherry.svg";
+import crispy from "../assets/mascots/crispy.svg";
+
 export default function Opslag({ recipes }) {
 
     const navigate = useNavigate()
+    const { crispyTheme, buzzyTheme, cherryTheme } = useTheme();
+
+        const ziggyImage = crispyTheme
+          ? crispy
+          : buzzyTheme
+            ? buzzy
+            : cherryTheme
+              ? cherry
+              : ziggy;
+      
     
     return (
 
@@ -17,7 +34,7 @@ export default function Opslag({ recipes }) {
 
                     <div>
                         <img className="changeMascot"
-                            src="/src/assets/mascots/ziggy.svg"
+                            src={ziggyImage}
                             alt="ziggy"
                         />
                     </div>
