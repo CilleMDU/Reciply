@@ -108,7 +108,7 @@ export default function Indkobsliste() {
                             onClick={() => navigate(`/recipe/${indkobListe.recipe_id}`)}
                         >
                         Gå til opskrift
-                                <img className="ikonerFarveChange" src={frem} alt="frem" />
+                                <img src={frem} alt="frem" />
                         </button>
                     </div>
                 )}

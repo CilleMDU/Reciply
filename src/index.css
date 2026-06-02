@@ -111,3 +111,42 @@ html {
 .cherryTheme .ikonerFarveChange {
   filter: var(--filter-cherry);
 }
+
+.gaTilOpskrift{
+  background-color: var(--ziggy);
+}
+.crispyTheme .gaTilOpskrift{
+  background-color: var(--crispy);
+}
+.buzzyTheme .gaTilOpskrift{
+  background-color: var(--buzzy);
+}
+.cherryTheme .gaTilOpskrift{
+  background-color: var(--cherry);
+}
+
+.indkobKnap{
+  border-color: var(--ziggy);
+}
+.crispyTheme .indkobKnap{
+  border-color: var(--crispy);
+}
+.buzzyTheme .indkobKnap{
+  border-color: var(--buzzy);
+}
+.cherryTheme .indkobKnap{
+  border-color: var(--cherry);
+}
+
+.opretIndkob{
+  background-color: var(--ziggy);
+}
+.crispyTheme .opretIndkob{
+  background-color: var(--crispy);
+}
+.buzzyTheme .opretIndkob{
+  background-color: var(--buzzy);
+}
+.cherryTheme .opretIndkob{
+  background-color: var(--cherry);
+}
