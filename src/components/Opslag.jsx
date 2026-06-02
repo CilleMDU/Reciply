@@ -16,7 +16,7 @@ export default function Opslag({ recipes }) {
                     </h2>
 
                     <div>
-                        <img
+                        <img className="changeMascot"
                             src="/src/assets/mascots/ziggy.svg"
                             alt="ziggy"
                         />

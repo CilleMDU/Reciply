@@ -30,7 +30,7 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
     <div>
         <header className="header">
             <button className="plus-btn" onClick={handleGoToCreateRecipe}>
-                <img src={plusIcon} alt="plus" />
+                <img className="ikonerFarveChange" src={plusIcon} alt="plus" />
             </button>
 
         <div className="profilNavn">
@@ -69,7 +69,7 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
       </section>
 
       <div className="profilNav">
-        <img
+        <img className="ikonerFarveChange"
           src={
             activeTab === "opslag"
               ? opslagActiveIcon
@@ -79,7 +79,7 @@ export default function ProfilInfo({ activeTab, setActiveTab }) {
           onClick={() => setActiveTab("opslag")}
         />
 
-        <img
+        <img className="ikonerFarveChange"
           src={
             activeTab === "liked"
               ? profilHeartActiveIcon

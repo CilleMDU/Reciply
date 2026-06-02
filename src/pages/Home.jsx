@@ -101,17 +101,7 @@ function mergeFakeUserPostDataWithDatabaseRecipeData(databaseRecipes, mockupData
       recipeId: 2,
     },
 
-    // {
-    //   foodPics: [
-    //     "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1381&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    //   ],
-    //   profilPic:
-    //     "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    //   profilNavn: "larsjensen",
-    //   profilComment: "Jeg elsker PIZZA",
-    //   tid: "For 1 dag siden",
-    //   recipeId: 2,
-    // },
+ 
   ];
 
 

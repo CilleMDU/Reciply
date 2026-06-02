@@ -65,7 +65,7 @@ export default function IndkobOversigt() {
         <>
             <header className="header">
                 <button className="plus-btn">
-                    <img
+                    <img className="ikonerFarveChange"
                         src={plusIcon}
                         alt="plus"
                         onClick={() => navigate("/indkobsOpret")}
@@ -77,7 +77,7 @@ export default function IndkobOversigt() {
                 </div>
 
                 <div className="profilMenu">
-                    <img
+                    <img className="ikonerFarveChange"
                         src={profilMenuIcon}
                         alt="logo"
                         className="profilMenu"
@@ -87,7 +87,7 @@ export default function IndkobOversigt() {
 
             <main className="indkob_main">
                 <div className="sogfelt">
-                    <img src={sogActiveIcon} alt="sog" />
+                    <img className="ikonerFarveChange" src={sogActiveIcon} alt="sog" />
                 </div>
 
                 <div className="indkobBilledeWrapper">

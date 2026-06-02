@@ -103,7 +103,7 @@ export default function IndkobsOpret() {
         <>
             <header className="header">
                 <button className="tilbage-btn">
-                    <img src={tilbageIcon} alt="tilbage" onClick={() => navigate(`/indkobOversigt`)}/>
+                    <img className="ikonerFarveChange" src={tilbageIcon} alt="tilbage" onClick={() => navigate(`/indkobOversigt`)}/>
                 </button>
 
                 <div className="logo">
@@ -111,7 +111,7 @@ export default function IndkobsOpret() {
                 </div>
 
                 <div className="skrallespan">
-                    <img src={skrallespan} alt="skrallespan" />
+                    <img className="ikonerFarveChange" src={skrallespan} alt="skrallespan" />
                 </div>
             </header>
 
@@ -130,7 +130,7 @@ export default function IndkobsOpret() {
                     className="addIngredient"
                     onClick={() => setShowInputs(true)}
                 >
-                    <img src={plus} alt="plus" /> Tilføj ingrediens
+                    <img className="ikonerFarveChange" src={plus} alt="plus" /> Tilføj ingrediens
                 </button>
 
                 {showInputs && (
@@ -152,7 +152,7 @@ export default function IndkobsOpret() {
                         />
 
                         <button onClick={addIngredient}>
-                            <img src={save} alt="save" />
+                            <img className="ikonerFarveChange" src={save} alt="save" />
                         </button>
                     </div>
                 )}
@@ -166,7 +166,7 @@ export default function IndkobsOpret() {
                                 className="iconButton"
                                 onClick={() => deleteIngredient(ingredient.id)}
                             >
-                                <img src={slet} alt="slet" />
+                                <img className="ikonerFarveChange" src={slet} alt="slet" />
                             </button>
 
                             
@@ -186,7 +186,7 @@ export default function IndkobsOpret() {
                                     />
 
                                     <button onClick={saveEdit}>
-                                        <img src={save} alt="save" />
+                                        <img className="ikonerFarveChange" src={save} alt="save" />
                                     </button>
                                 </div>
                             ) : (
@@ -207,7 +207,7 @@ export default function IndkobsOpret() {
                                     className="iconButton"
                                     onClick={() => startEdit(ingredient)}
                                 >
-                                    <img src={edit} alt="edit" />
+                                    <img className="ikonerFarveChange" src={edit} alt="edit" />
                                 </button>
                             )}
 

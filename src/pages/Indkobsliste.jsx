@@ -58,7 +58,7 @@ export default function Indkobsliste() {
 
             <header className="header">
       <button className="tilbage-btn">
-        <img src={tilbage} alt="tilbage" onClick={() => navigate(`/indkobOversigt`)}/>
+        <img  className="ikonerFarveChange" src={tilbage} alt="tilbage" onClick={() => navigate(`/indkobOversigt`)}/>
       </button>
 
       <div className="logo">
@@ -66,7 +66,7 @@ export default function Indkobsliste() {
       </div>
 
       <div className="skrallespan">
-        <img src={skrallespan} alt="skrallespan" className="skrallespan" />
+        <img className="ikonerFarveChange" src={skrallespan} alt="skrallespan" />
       </div>
     </header>
 
@@ -107,8 +107,8 @@ export default function Indkobsliste() {
                             className="gaTilOpskrift"
                             onClick={() => navigate(`/recipe/${indkobListe.recipe_id}`)}
                         >
-                            Gå til opskrift
-                            <img className="fremPil" src={frem} alt="frem" />
+                        Gå til opskrift
+                                <img className="ikonerFarveChange" src={frem} alt="frem" />
                         </button>
                     </div>
                 )}
