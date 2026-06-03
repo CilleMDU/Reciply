@@ -1,6 +1,6 @@
 Denne opgave er blevet udarbejdet af følgende elever:
 
-Cecilie Schmidt
+Cecilie Schmidt og
 Signe Kjellerup Hove
 
 Hver elev har fået ansvaret for dele af koden. Nogle dele af koden har den ansvarlige fået assistance af en af de andre elever. Følgende er eleverne og deres ansvars områder:
