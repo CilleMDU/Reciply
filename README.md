@@ -1,3 +1,5 @@
+Appen er kodet til at have en max-width på 390px
+
 Denne opgave er blevet udarbejdet af følgende elever:
 
 Cecilie Schmidt og
