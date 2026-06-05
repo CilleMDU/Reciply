@@ -101,7 +101,7 @@ html {
 }
 
 .crispyTheme .ikonerFarveChange {
-  filter: var(--filter-crispy);
+  filter: var(--filter-cripsy);
 }
 
 .buzzyTheme .ikonerFarveChange {
