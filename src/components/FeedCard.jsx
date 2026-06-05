@@ -67,14 +67,14 @@ export default function FeedCard({ profilPic, foodPics, profilNavn, profilCommen
           </div>
 
           <div className="icon-box">
-            <img src={comment} alt="comment" />
+            <img className="ikonerFarveChange" src={comment} alt="comment" />
           </div>
             <div>
-               <img src={reshare} alt="reshare"/>       
+               <img className="ikonerFarveChange" src={reshare} alt="reshare"/>       
             </div>
         </div>
 
-        <img src={gemOpskriftInactive} alt="bookmark" />
+        <img className="ikonerFarveChange" src={gemOpskriftInactive} alt="bookmark" />
       </div>
 
       <div className="feed-text">
