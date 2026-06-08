@@ -1,5 +1,7 @@
 Appen er kodet til at have en max-width på 390px
 
+For at bedst muligt at kunne fremvise appen er det en test profil man er på når man åbner linket.
+
 Denne opgave er blevet udarbejdet af følgende elever:
 
 Cecilie Schmidt og
