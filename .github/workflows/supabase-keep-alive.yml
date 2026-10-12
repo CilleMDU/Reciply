@@ -1,0 +1,34 @@
+name: Supabase keep alive
+
+on:
+  schedule:
+    - cron: "0 6 * * 1,4" # mandag og torsdag kl. 06 (UTC)
+  workflow_dispatch: # gør det muligt at køre den manuelt
+
+jobs:
+  ping:
+    # Henter variablerne fra dette environment (Settings -> Environments)
+    environment: github-pages-deployment
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+      SUPABASE_KEY: ${{ vars.VITE_SUPABASE_APIKEY }}
+      # Tilpas til en tabel, der findes i dit Supabase-projekt
+      PING_TABLE: recipes_main
+    steps:
+      - name: Ping Supabase
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_KEY" ]; then
+            echo "::error::VITE_SUPABASE_URL / VITE_SUPABASE_APIKEY mangler i environment 'github-pages-deployment'"
+            exit 1
+          fi
+
+          # VITE_SUPABASE_URL kan ende på /rest/v1 eller være projekt-URL'en
+          BASE="${SUPABASE_URL%/}"
+          BASE="${BASE%/rest/v1}"
+
+          curl --fail-with-body -sS --retry 3 --retry-delay 5 -o /dev/null \
+            "$BASE/rest/v1/$PING_TABLE?select=*&limit=1" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY"
+          echo "Supabase svarede OK"
